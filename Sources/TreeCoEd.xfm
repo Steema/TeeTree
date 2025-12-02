@@ -1,0 +1,449 @@
+object ConnectionEditor: TConnectionEditor
+  Left = 328
+  Top = 356
+  AutoScroll = False
+  Caption = 'Tree Connection Editor'
+  ClientHeight = 255
+  ClientWidth = 415
+  Color = clBtnFace
+  ParentFont = True
+  OldCreateOrder = True
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 415
+    Height = 214
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 0
+    OnChange = PageControl1Change
+    object TabSheet1: TTabSheet
+      Caption = 'Format'
+      object RGStyle: TRadioGroup
+        Left = 16
+        Top = 48
+        Width = 145
+        Height = 105
+        Caption = 'Style:'
+        Items.Strings = (
+          '&Line'
+          '&Sides'
+          '&Inverted Sides'
+          '&Curve')
+        TabOrder = 0
+        OnClick = RGStyleClick
+      end
+      object ButtonPen1: TButtonPen
+        Left = 176
+        Top = 56
+        Caption = '&Border...'
+        TabOrder = 1
+        OnClick = Button2Click
+      end
+      object CheckBox1: TCheckBox
+        Left = 20
+        Top = 19
+        Width = 97
+        Height = 17
+        Caption = '&Automatic'
+        TabOrder = 2
+        OnClick = CheckBox1Click
+      end
+      object BBack: TButton
+        Left = 176
+        Top = 120
+        Width = 75
+        Height = 25
+        Caption = 'Bac&k...'
+        TabOrder = 3
+        OnClick = BBackClick
+      end
+      object CBBack: TCheckBox
+        Left = 176
+        Top = 96
+        Width = 129
+        Height = 17
+        Caption = '&Draw back'
+        TabOrder = 4
+        OnClick = CBBackClick
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Arrow From'
+      object Label1: TLabel
+        Left = 240
+        Top = 105
+        Width = 23
+        Height = 13
+        Caption = 'S&ize:'
+        FocusControl = Edit1
+      end
+      object RGFromStyle: TRadioGroup
+        Left = 24
+        Top = 21
+        Width = 193
+        Height = 108
+        Caption = 'Arrow:'
+        Columns = 2
+        Items.Strings = (
+          '&None'
+          '&Solid'
+          '&Lines'
+          'S&quare'
+          '&Circle'
+          '&Diamond')
+        TabOrder = 0
+        OnClick = RGFromStyleClick
+      end
+      object Button4: TButton
+        Left = 240
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = '&Pattern...'
+        TabOrder = 1
+        OnClick = Button4Click
+      end
+      object UpDownFrom: TUpDown
+        Left = 300
+        Top = 102
+        Width = 15
+        Height = 21
+        Associate = Edit1
+        Min = 1
+        Position = 1
+        TabOrder = 2
+      end
+      object Edit1: TEdit
+        Left = 270
+        Top = 102
+        Width = 30
+        Height = 21
+        TabOrder = 3
+        Text = '1'
+        OnChange = Edit1Change
+      end
+      object BFromColor: TButtonColor
+        Left = 240
+        Top = 136
+        Caption = 'C&olor...'
+        TabOrder = 4
+      end
+      object ButtonPen2: TButtonPen
+        Left = 240
+        Top = 26
+        Caption = '&Border...'
+        TabOrder = 5
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Arrow To'
+      object Label2: TLabel
+        Left = 240
+        Top = 105
+        Width = 23
+        Height = 13
+        Caption = 'S&ize:'
+        FocusControl = Edit2
+      end
+      object RGToStyle: TRadioGroup
+        Left = 24
+        Top = 21
+        Width = 193
+        Height = 108
+        Caption = 'Arrow:'
+        Columns = 2
+        Items.Strings = (
+          '&None'
+          '&Solid'
+          '&Lines'
+          'S&quare'
+          '&Circle'
+          '&Diamond')
+        TabOrder = 0
+        OnClick = RGToStyleClick
+      end
+      object Button6: TButton
+        Left = 240
+        Top = 61
+        Width = 75
+        Height = 25
+        Caption = '&Pattern...'
+        TabOrder = 1
+        OnClick = Button6Click
+      end
+      object Edit2: TEdit
+        Left = 270
+        Top = 102
+        Width = 30
+        Height = 21
+        TabOrder = 2
+        Text = '1'
+        OnChange = Edit2Change
+      end
+      object UpDownTo: TUpDown
+        Left = 300
+        Top = 102
+        Width = 15
+        Height = 21
+        Associate = Edit2
+        Min = 1
+        Position = 1
+        TabOrder = 3
+      end
+      object BToColor: TButtonColor
+        Left = 240
+        Top = 136
+        Caption = 'C&olor...'
+        TabOrder = 4
+      end
+      object ButtonPen3: TButtonPen
+        Left = 240
+        Top = 27
+        Caption = '&Border...'
+        TabOrder = 5
+        OnClick = Button5Click
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Text'
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Points'
+      ImageIndex = 4
+      object Label3: TLabel
+        Left = 6
+        Top = 8
+        Width = 27
+        Height = 13
+        Caption = '&Point:'
+        FocusControl = LBPoints
+      end
+      object SpeedButton1: TSpeedButton
+        Left = 8
+        Top = 144
+        Width = 23
+        Height = 22
+        Hint = 'Add new Point'
+        Caption = '+'
+        Flat = True
+        OnClick = SpeedButton1Click
+      end
+      object BDeletePoint: TSpeedButton
+        Left = 40
+        Top = 144
+        Width = 23
+        Height = 22
+        Hint = 'Delete Point'
+        Caption = '-'
+        Enabled = False
+        Flat = True
+        OnClick = BDeletePointClick
+      end
+      object LBPoints: TListBox
+        Left = 6
+        Top = 24
+        Width = 97
+        Height = 113
+        ItemHeight = 13
+        TabOrder = 0
+        OnClick = LBPointsClick
+      end
+      object GroupX: TGroupBox
+        Left = 112
+        Top = 20
+        Width = 105
+        Height = 147
+        Caption = '&X:'
+        Enabled = False
+        TabOrder = 1
+        object Label4: TLabel
+          Left = 8
+          Top = 122
+          Width = 30
+          Height = 13
+          Caption = '&Value:'
+          FocusControl = EXValue
+        end
+        object EXValue: TEdit
+          Left = 40
+          Top = 118
+          Width = 41
+          Height = 21
+          TabOrder = 0
+          Text = '0'
+          OnChange = EXValueChange
+        end
+        object RBFixedX: TRadioButton
+          Left = 6
+          Top = 20
+          Width = 95
+          Height = 17
+          Caption = '&Fixed'
+          TabOrder = 1
+          OnClick = RBAutoXClick
+        end
+        object RBRelFromX: TRadioButton
+          Left = 6
+          Top = 39
+          Width = 95
+          Height = 17
+          Caption = 'R&elative From'
+          TabOrder = 2
+          OnClick = RBAutoXClick
+        end
+        object RBPrevX: TRadioButton
+          Left = 6
+          Top = 76
+          Width = 95
+          Height = 17
+          Caption = 'P&revious point'
+          TabOrder = 3
+          OnClick = RBAutoXClick
+        end
+        object RBNextX: TRadioButton
+          Left = 6
+          Top = 95
+          Width = 95
+          Height = 17
+          Caption = '&Next point'
+          TabOrder = 4
+          OnClick = RBAutoXClick
+        end
+        object UDX: TUpDown
+          Left = 81
+          Top = 118
+          Width = 16
+          Height = 21
+          Associate = EXValue
+          Min = -32768
+          Max = 32767
+          TabOrder = 5
+          Thousands = False
+        end
+        object RBRelToX: TRadioButton
+          Left = 6
+          Top = 57
+          Width = 95
+          Height = 17
+          Caption = 'Relative &To'
+          TabOrder = 6
+          OnClick = RBAutoXClick
+        end
+      end
+      object GroupY: TGroupBox
+        Left = 232
+        Top = 20
+        Width = 105
+        Height = 147
+        Caption = '&Y:'
+        Enabled = False
+        TabOrder = 2
+        object Label5: TLabel
+          Left = 8
+          Top = 122
+          Width = 30
+          Height = 13
+          Caption = 'Va&lue:'
+          FocusControl = EYValue
+        end
+        object EYValue: TEdit
+          Left = 40
+          Top = 118
+          Width = 41
+          Height = 21
+          TabOrder = 0
+          Text = '0'
+          OnChange = EYValueChange
+        end
+        object RBNextY: TRadioButton
+          Left = 6
+          Top = 95
+          Width = 95
+          Height = 17
+          Caption = 'Next point'
+          TabOrder = 1
+          OnClick = RBAutoYClick
+        end
+        object RBPrevY: TRadioButton
+          Left = 6
+          Top = 76
+          Width = 95
+          Height = 17
+          Caption = 'Pre&vious point'
+          TabOrder = 2
+          OnClick = RBAutoYClick
+        end
+        object RBRelFromY: TRadioButton
+          Left = 6
+          Top = 39
+          Width = 95
+          Height = 17
+          Caption = 'Relative Fro&m'
+          TabOrder = 3
+          OnClick = RBAutoYClick
+        end
+        object RBFixedY: TRadioButton
+          Left = 6
+          Top = 20
+          Width = 95
+          Height = 17
+          Caption = 'Fixe&d'
+          TabOrder = 4
+          OnClick = RBAutoYClick
+        end
+        object UDY: TUpDown
+          Left = 81
+          Top = 118
+          Width = 16
+          Height = 21
+          Associate = EYValue
+          Min = -32768
+          Max = 32767
+          TabOrder = 5
+          Thousands = False
+        end
+        object RBRelToY: TRadioButton
+          Left = 6
+          Top = 57
+          Width = 95
+          Height = 17
+          Caption = 'Relative T&o'
+          TabOrder = 6
+          OnClick = RBAutoYClick
+        end
+      end
+      object CBAutoPoint: TCheckBox
+        Left = 184
+        Top = 2
+        Width = 97
+        Height = 17
+        Caption = '&Automatic'
+        TabOrder = 3
+        OnClick = CBAutoPointClick
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 214
+    Width = 415
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object Button1: TButton
+      Left = 328
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Close'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+  end
+end

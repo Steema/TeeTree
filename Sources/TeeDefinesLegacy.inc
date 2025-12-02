@@ -1,0 +1,506 @@
+{$IFDEF VER360}  // RAD Studio XE v15.0 (12) Athens (Crete) 2024 (v 23.0)
+                 // Win 32bit / Win 64bit / WinX 64bit / OSX 64bit / OSX 64bit ARM / iOS 64 FMX / Android & C++ / Linux 64bit
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+  {$DEFINE D25}
+  {$DEFINE D26}
+  {$DEFINE D27}
+  {$DEFINE D28}
+  {$DEFINE D29}
+{$ENDIF}
+
+{$IFDEF VER350}  // RAD Studio XE v14.0 (11) Alexandria (Olympus) 2021 (v 22.0)
+                 // Win 32bit / Win 64bit / OSX 64bit / OSX 64bit ARM / iOS 64 FMX / Android & C++ / Linux 64bit
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+  {$DEFINE D25}
+  {$DEFINE D26}
+  {$DEFINE D27}
+  {$DEFINE D28}
+{$ENDIF}
+
+{$IFDEF VER340}  // RAD Studio XE v13.0 (10.4) Sydney (Denali) 2020 (v 21.0) Win 32bit / Win 64bit / OSX 64bit / iOS 64 FMX / Android & C++ / Linux 64bit
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+  {$DEFINE D25}
+  {$DEFINE D26}
+  {$DEFINE D27}
+{$ENDIF}
+
+{$IFDEF VER330}  // RAD Studio XE v12.0 Rio (Carnival) 2018 (v 20.0) 32bit / 64bit / OSX / iOS 32-64 FMX / Android & C++ / Linux 64bit
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+  {$DEFINE D25}
+  {$DEFINE D26}
+{$ENDIF}
+
+{$IFDEF VER320}  // RAD Studio XE v11.0 Tokyo (Godzilla) 2016 (v 19.0) 32bit / 64bit / OSX / iOS 32-64 FMX / Android & C++ / Linux 64bit
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+  {$DEFINE D25}
+{$ENDIF}
+
+{$IFDEF VER310}  // RAD Studio XE v10.1 Berlin (London BigBen) 2016 (v 18.0) 32bit / 64bit / OSX / iOS 32-64 FMX / Android & C++
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+  {$DEFINE D24}
+{$ENDIF}
+
+{$IFDEF VER300}  // RAD Studio XE v10 Seattle 2015 (v 17.0) 32bit / 64bit / OSX / iOS 32-64 FMX / Android & C++
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+  {$DEFINE D23}
+{$ENDIF}
+
+{$IFDEF VER290}  // RAD Studio XE v8 2015 (v 16.0) 32bit / 64bit / OSX / iOS 32-64 FMX / Android & C++
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+  {$DEFINE D22}
+{$ENDIF}
+
+{$IFDEF VER280}  // RAD Studio XE v7 2014 (v 15.0) 32bit / 64bit / OSX / iOS FMX / Android & C++
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE D21}
+{$ENDIF}
+
+{$IFDEF VER270}  // RAD Studio XE v6 2014 (v 14.0) 32bit / 64bit / OSX / iOS FMX / Android C++
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE D20}
+  {$DEFINE UPTOXE7}
+{$ENDIF}
+
+{$IFDEF VER260}  // RAD Studio XE v5 2013 (v 12.0) 32bit / 64bit / OSX / iOS FMX / Android
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE D19}
+  {$DEFINE UPTOXE7}
+{$ENDIF}
+
+{$IFDEF VER250}  // RAD Studio XE v4 2013 (v 11.0) 32bit / 64bit / OSX / iOS FMX
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE D18}
+  {$DEFINE UPTOXE7}
+{$ENDIF}
+
+{$IFDEF VER240}  // RAD Studio XE v3 2012 (v 10.0) 32bit / 64bit / OSX
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE D17}
+  {$DEFINE UPTOXE3}
+  {$DEFINE UPTOXE7}
+{$ENDIF}
+
+{$IFDEF VER230}  // RAD Studio XE v2 2011 (v 9.0) 32bit / 64bit / OSX / iOS FMI
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+  {$DEFINE D16}
+  {$DEFINE UPTOXE3}
+  {$DEFINE UPTOXE7}
+{$ENDIF}
+
+{$IFDEF VER220}  // RAD Studio XE 2011 (v 8.0)
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+  {$DEFINE D15}
+{$ENDIF}
+
+{$IFDEF VER210}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+  {$DEFINE D14}
+{$ENDIF}
+
+{$IFDEF VER200}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+  {$DEFINE D12}
+{$ENDIF}
+
+{$IFDEF VER190}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+  {$DEFINE D11}
+{$ENDIF}
+
+{$IFDEF VER185}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+  {$DEFINE D105}
+{$ENDIF}
+
+{$IFDEF VER180}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+  {$DEFINE D10}
+{$ENDIF}
+
+{$IFDEF VER170}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+  {$DEFINE D9}
+{$ENDIF}
+
+{$IFDEF VER160}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$DEFINE D8}
+{$ENDIF}
+
+{$IFDEF VER150}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$DEFINE D7}
+  {$IFDEF BCB}
+    {$DEFINE C5}
+    {$DEFINE C6}
+  {$ENDIF}
+{$ENDIF}
+
+{$IFDEF VER145}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$IFDEF BCB}
+    {$DEFINE C5}
+    {$DEFINE C6}
+  {$ENDIF}
+  {$DEFINE K3}
+{$ENDIF}
+
+{$IFDEF VER140}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE D6}
+  {$IFDEF BCB}
+    {$DEFINE C5}
+    {$DEFINE C6}
+  {$ENDIF}  
+{$ENDIF}
+
+{$IFDEF VER130}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE D5}
+  {$DEFINE C4}
+  {$DEFINE C5}
+{$ENDIF}
+
+{$IFDEF VER125}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE C3D4}
+  {$DEFINE C4}
+  {$DEFINE BCB}
+{$ENDIF}
+
+{$IFDEF VER120}
+  {$DEFINE D3}
+  {$DEFINE D4}
+  {$DEFINE C3D4}
+{$ENDIF}
+
+{$IFDEF VER110}
+  {$DEFINE D3}
+  {$IFDEF BCB}
+    {$DEFINE C3}
+    {$DEFINE C3D4}
+  {$ELSE}
+    {$DEFINE D4}
+    {$DEFINE C3D4}
+  {$ENDIF}
+{$ENDIF}
+

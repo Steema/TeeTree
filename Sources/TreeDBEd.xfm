@@ -1,0 +1,524 @@
+object FormDBTree: TFormDBTree
+  Left = 234
+  Top = 181
+  ActiveControl = Button1
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'Database Tree Wizard'
+  ClientHeight = 320
+  ClientWidth = 572
+  Color = clBtnFace
+  ParentFont = True
+  OldCreateOrder = True
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel4: TPanel
+    Left = 214
+    Top = 0
+    Width = 357
+    Height = 279
+    TabOrder = 3
+    object Label8: TLabel
+      Left = 13
+      Top = 14
+      Width = 62
+      Height = 13
+      Caption = 'Sample data:'
+    end
+    object Label9: TLabel
+      Left = 187
+      Top = 14
+      Width = 66
+      Height = 13
+      Caption = 'Tree Preview:'
+    end
+    object Memo1: TMemo
+      Left = 8
+      Top = 32
+      Width = 167
+      Height = 217
+      Lines.Strings = (
+        'Code '#9'Parent'#9' Text'
+        '------ '#9'----------- '#9'------------'
+        '  1     '#9'0    '#9'Continents'
+        '  2     '#9'1      '#9'America'
+        '  3     '#9'1      '#9'Africa'
+        '  4     '#9'1      '#9'Australia'
+        '  5     '#9'2        '#9'USA'
+        '  6     '#9'5          '#9'California'
+        '  7     '#9'4        '#9'Sydney')
+      TabOrder = 0
+      WantTabs = True
+    end
+    object Memo3: TMemo
+      Left = 8
+      Top = 32
+      Width = 169
+      Height = 217
+      Lines.Strings = (
+        'Country      '#9'City'
+        '----------   '#9#9'---------------'
+        'AUSTRALIA    '#9'Sydney'
+        'USA          '#9'New York'
+        'UK           '#9'London'
+        'AUSTRALIA    '#9'Camberra'
+        'UK           '#9'Manchester'
+        'UK           '#9'Liverpool'
+        'USA          '#9'Michigan'
+        'USA          '#9'Chicago')
+      TabOrder = 1
+    end
+    object Memo5: TMemo
+      Left = 8
+      Top = 32
+      Width = 169
+      Height = 217
+      TabStop = False
+      Lines.Strings = (
+        '  Person   Department'
+        '  -------  --------------'
+        '  John     Accounting'
+        '  Chris    Management'
+        '  Anne     Sales'
+        ''
+        '  Person  Month  Salary'
+        '  ------- ------ ----------'
+        '   John    April  $1000'
+        '   Chris   March  $900'
+        '   Chris   April  $700'
+        '   Anne  June  $500')
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object TreePreview: TTree
+      Left = 185
+      Top = 32
+      Width = 161
+      Height = 217
+      AllowPanning = pmVertical
+      AnimatedZoomSteps = 3
+      CrossBox.SignPen.Width = 0
+      Zoom.AnimatedSteps = 3
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 3
+      DefaultCanvas = 'TGDIPlusCanvas'
+      object TreeShape1: TTreeNodeShape
+        Border.Visible = False
+        Image.Data = {
+          07544269746D6170DE000000424DDE0000000000000076000000280000000F00
+          00000D0000000100040000000000680000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00FFF0000000000000FF77777777777000FF7FB8B88B8B7000F7FB8B8BB8B8
+          0700F7F8B8B88B8707007F8B8B8BB8B077007FFFFFFFFF708700777777777777
+          B700F7F8B8B88B8B8700F7FB8B8BFFFFF700F7F8B8B8777777F0FF7FFFFF7FFF
+          FFF0FFF77777FFFFFFF0}
+        Transparent = True
+        X0 = 30
+        Y0 = 0
+        Expanded = True
+        ImageIndex = tiNone
+        Text.Strings = (
+          'Continents')
+      end
+      object TreeShape2: TTreeNodeShape
+        Border.Visible = False
+        Image.Data = {
+          07544269746D6170DE000000424DDE0000000000000076000000280000000F00
+          00000D0000000100040000000000680000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00F00000000000000077777777777777007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007F8B8B8B8B8B87007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007FFFFFFFFFFFF70078B8B8B8777777F0F78B8B87FFFF
+          FFF0FF77777FFFFFFFF0}
+        Transparent = True
+        ImageIndex = tiNone
+        Parent = TreeShape1
+        Text.Strings = (
+          'America')
+      end
+      object TreeShape3: TTreeNodeShape
+        Border.Visible = False
+        Image.Data = {
+          07544269746D6170DE000000424DDE0000000000000076000000280000000F00
+          00000D0000000100040000000000680000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00F00000000000000077777777777777007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007F8B8B8B8B8B87007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007FFFFFFFFFFFF70078B8B8B8777777F0F78B8B87FFFF
+          FFF0FF77777FFFFFFFF0}
+        Transparent = True
+        ImageIndex = tiNone
+        Parent = TreeShape1
+        Text.Strings = (
+          'Africa')
+      end
+      object TreeShape4: TTreeNodeShape
+        Border.Visible = False
+        Image.Data = {
+          07544269746D6170DE000000424DDE0000000000000076000000280000000F00
+          00000D0000000100040000000000680000000000000000000000100000000000
+          0000000000000000800000800000008080008000000080008000808000008080
+          8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00F00000000000000077777777777777007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007F8B8B8B8B8B87007FB8B8B8B8B8B7007F8B8B8B8B8B
+          87007FB8B8B8B8B8B7007FFFFFFFFFFFF70078B8B8B8777777F0F78B8B87FFFF
+          FFF0FF77777FFFFFFFF0}
+        Transparent = True
+        ImageIndex = tiNone
+        Parent = TreeShape1
+        Text.Strings = (
+          'Australia')
+      end
+      object TreeShape1_TreeShape2: TTreeConnection
+        FromShape = TreeShape1
+        ToShape = TreeShape2
+      end
+      object TreeShape1_TreeShape3: TTreeConnection
+        FromShape = TreeShape1
+        ToShape = TreeShape3
+      end
+      object TreeShape1_TreeShape4: TTreeConnection
+        FromShape = TreeShape1
+        ToShape = TreeShape4
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 214
+    Top = 0
+    Width = 358
+    Height = 279
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 3
+      Top = 18
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '&Dataset:'
+    end
+    object Label3: TLabel
+      Left = 3
+      Top = 50
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '&Code field:'
+    end
+    object Label4: TLabel
+      Left = 3
+      Top = 82
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '&Parent field:'
+    end
+    object Label5: TLabel
+      Left = 3
+      Top = 115
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '&Text fields:'
+    end
+    object Label6: TLabel
+      Left = 3
+      Top = 177
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'Detail &Dataset:'
+    end
+    object Label7: TLabel
+      Left = 3
+      Top = 201
+      Width = 85
+      Height = 20
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'Detail fields:'
+    end
+    object CBDataSet: TComboFlat
+      Left = 97
+      Top = 14
+      Width = 198
+      DropDownCount = 20
+      TabOrder = 0
+      OnChange = CBDataSetChange
+    end
+    object ComboBox2: TComboFlat
+      Left = 97
+      Top = 46
+      Width = 198
+      TabOrder = 1
+      OnChange = ComboBox2Change
+    end
+    object ComboBox3: TComboFlat
+      Left = 97
+      Top = 78
+      Width = 198
+      TabOrder = 2
+      OnChange = ComboBox3Change
+    end
+    object ComboBox4: TComboFlat
+      Left = 97
+      Top = 111
+      Width = 198
+      Style = csDropDown
+      TabOrder = 3
+      OnChange = ComboBox4Change
+    end
+    object ComboBox5: TComboFlat
+      Left = 97
+      Top = 173
+      Width = 198
+      TabOrder = 4
+      OnChange = ComboBox5Change
+    end
+    object ComboBox6: TComboFlat
+      Left = 97
+      Top = 197
+      Width = 198
+      Style = csDropDown
+      TabOrder = 5
+      OnChange = ComboBox6Change
+    end
+    object Button4: TButton
+      Left = 299
+      Top = 111
+      Width = 21
+      Height = 19
+      Caption = '...'
+      TabOrder = 6
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      Left = 299
+      Top = 197
+      Width = 21
+      Height = 19
+      Caption = '...'
+      TabOrder = 7
+      OnClick = Button5Click
+    end
+    object Button7: TButton
+      Left = 299
+      Top = 78
+      Width = 21
+      Height = 19
+      Caption = '...'
+      TabOrder = 8
+      OnClick = Button7Click
+    end
+    object CheckBox1: TCheckBox
+      Left = 9
+      Top = 254
+      Width = 88
+      Height = 17
+      Caption = 'Multi-line text'
+      Checked = True
+      State = cbChecked
+      TabOrder = 9
+      OnClick = CheckBox1Click
+    end
+    object BNewDataSet: TButton
+      Left = 299
+      Top = 11
+      Width = 44
+      Height = 25
+      Caption = '...'
+      TabOrder = 10
+      Visible = False
+    end
+    object Button6: TButton
+      Left = 98
+      Top = 136
+      Width = 75
+      Height = 25
+      Caption = '&Format...'
+      TabOrder = 11
+      OnClick = Button6Click
+    end
+    object Button8: TButton
+      Left = 190
+      Top = 136
+      Width = 75
+      Height = 25
+      Caption = '&Header...'
+      TabOrder = 12
+      OnClick = Button8Click
+    end
+    object Button9: TButton
+      Left = 98
+      Top = 225
+      Width = 75
+      Height = 25
+      Caption = '&Format...'
+      TabOrder = 13
+      OnClick = Button9Click
+    end
+    object Button10: TButton
+      Left = 190
+      Top = 225
+      Width = 75
+      Height = 25
+      Caption = '&Header...'
+      TabOrder = 14
+      OnClick = Button10Click
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 279
+    Width = 572
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object Button1: TButton
+      Left = 224
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = '&Next >'
+      Default = True
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 129
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = '< &Previous'
+      Enabled = False
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 478
+      Top = 8
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = '&Cancel'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+    object BApply: TButton
+      Left = 388
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = '&Apply'
+      Enabled = False
+      TabOrder = 3
+      OnClick = BApplyClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 214
+    Height = 279
+    Align = alLeft
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 16
+      Top = 16
+      Width = 110
+      Height = 13
+      Caption = 'Choose a situation:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object RadioButton1: TRadioButton
+      Left = 16
+      Top = 56
+      Width = 17
+      Height = 17
+      TabOrder = 0
+      OnClick = RadioButton1Click
+    end
+    object Memo2: TMemo
+      Left = 40
+      Top = 56
+      Width = 161
+      Height = 41
+      Cursor = crHandPoint
+      TabStop = False
+      BorderStyle = bsNone
+      Color = clBtnFace
+      Lines.Strings = (
+        'One dataset with a "Code" field '
+        'and a "Parent" field pointing to it.')
+      ReadOnly = True
+      TabOrder = 1
+      OnClick = Memo2Click
+    end
+    object RadioButton2: TRadioButton
+      Left = 16
+      Top = 112
+      Width = 17
+      Height = 17
+      TabOrder = 2
+      OnClick = RadioButton2Click
+    end
+    object Memo4: TMemo
+      Left = 40
+      Top = 112
+      Width = 161
+      Height = 41
+      Cursor = crHandPoint
+      TabStop = False
+      BorderStyle = bsNone
+      Color = clBtnFace
+      Lines.Strings = (
+        'One dataset with optional'
+        'group-by fields. ')
+      ReadOnly = True
+      TabOrder = 3
+      OnClick = Memo4Click
+    end
+    object RadioButton3: TRadioButton
+      Left = 16
+      Top = 160
+      Width = 17
+      Height = 17
+      TabOrder = 4
+      OnClick = RadioButton3Click
+    end
+    object Memo6: TMemo
+      Left = 40
+      Top = 160
+      Width = 161
+      Height = 41
+      Cursor = crHandPoint
+      TabStop = False
+      BorderStyle = bsNone
+      Color = clBtnFace
+      Lines.Strings = (
+        'A master-detail pair of datasets'
+        'forming a tree.')
+      ReadOnly = True
+      TabOrder = 5
+      OnClick = Memo6Click
+    end
+  end
+end

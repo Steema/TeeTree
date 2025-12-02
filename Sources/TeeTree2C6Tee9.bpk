@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="TeeTree2C6Tee9.bpl"/>
+    <OBJFILES value="TeeTree2C6Tee9.obj TreeEd.obj TeeTree.obj TreeCoEd.obj TeeDBTre.obj 
+      TreeFlow.obj TreeShEd.obj TreeTeEd.obj TreeChildManagers.obj 
+      TeeRecentFiles.obj TreeAnimate.obj TreeAnimateEditor.obj 
+      TreeAnimationGallery.obj TeeOfficeConstants.obj TreeConst.obj TreeDBEd.obj 
+      TreeElectric.obj TreeExport.obj TreeNavigator.obj TreeTransit.obj 
+      TreeUML.obj"/>
+    <RESFILES value="TeeTree2C6Tee9.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) TreeEd.dfm TreeCoEd.dfm TreeShEd.dfm TreeTeEd.dfm 
+      TreeAnimateEditor.dfm TreeAnimationGallery.dfm TreeDBEd.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib vcl.lib"/>
+    <PACKAGES value="TeeLanguage9C6.bpi Tee9C6.bpi TeeUI9C6.bpi TeeDB9C6.bpi TeePro9C6.bpi 
+      rtl.bpi vcl.bpi dbrtl.bpi vcldb.bpi bcbie.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="TeeTree2C6Tee9.cpp"/>
+    <INCLUDEPATH value="$(TEEINCPATH);$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(TEELIBPATH);$(BCB)\Projects\Lib;$(BCB);$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\source\toolsapi"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(TEEINCPATH);$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp 
+      -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tWM"/>
+    <PFLAGS value="-Q -U$(TEELIBPATH) -$YD -$W -$O- -$A8 -v -JPHNE -M -LUDesignIde"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;TeeTree 2 Runtime Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="TeeTree2C6Tee9.cpp" FORMNAME="" UNITNAME="TeeTree2C6Tee6" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeTree2C6Tee9.res" FORMNAME="" UNITNAME="TeeTree2C6Tee6" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeEd.pas" FORMNAME="TreeEditor" UNITNAME="Treeed" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeTree.pas" FORMNAME="" UNITNAME="TeeTree" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeCoEd.pas" FORMNAME="ConnectionEditor" UNITNAME="Treecoed" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeDBTre.pas" FORMNAME="" UNITNAME="TeeDBTre" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeFlow.pas" FORMNAME="" UNITNAME="TreeFlow" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeShEd.pas" FORMNAME="NodeTreeEditor" UNITNAME="Treeshed" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeTeEd.pas" FORMNAME="FormTeeText" UNITNAME="Treeteed" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeChildManagers.pas" FORMNAME="" UNITNAME="TreeChildManagers" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeRecentFiles.pas" FORMNAME="" UNITNAME="TeeRecentFiles" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeAnimate.pas" FORMNAME="" UNITNAME="TreeAnimate" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeAnimateEditor.pas" FORMNAME="TreeAnimateEditor" UNITNAME="Treeanimateeditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeAnimationGallery.pas" FORMNAME="AnimationGallery" UNITNAME="Treeanimationgallery" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeOfficeConstants.pas" FORMNAME="" UNITNAME="TeeOfficeConstants" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeConst.pas" FORMNAME="" UNITNAME="TreeConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeDBEd.pas" FORMNAME="FormDBTree" UNITNAME="Treedbed" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeElectric.pas" FORMNAME="" UNITNAME="TreeElectric" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeExport.pas" FORMNAME="" UNITNAME="TreeExport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeNavigator.pas" FORMNAME="" UNITNAME="TreeNavigator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeTransit.pas" FORMNAME="" UNITNAME="TreeTransit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeUML.pas" FORMNAME="" UNITNAME="TreeUML" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeLanguage9C6.bpi" FORMNAME="" UNITNAME="TeeLanguage9C6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Tee9C6.bpi" FORMNAME="" UNITNAME="Tee9C6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeUI9C6.bpi" FORMNAME="" UNITNAME="TeeUI9C6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeeDB9C6.bpi" FORMNAME="" UNITNAME="TeeDB9C6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TeePro9C6.bpi" FORMNAME="" UNITNAME="TeePro9C6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dbrtl.bpi" FORMNAME="" UNITNAME="dbrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcldb.bpi" FORMNAME="" UNITNAME="vcldb" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="bcbie.bpi" FORMNAME="" UNITNAME="bcbie" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=2
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=3082
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Steema Software
+FileDescription=TeeTree 2 for TeeChart 9
+FileVersion=2.0.0.0
+InternalName=TeeTree2C6Tee9
+LegalCopyright=Copyright (c) 1998-2025 by David Berneda
+LegalTrademarks=
+OriginalFilename=
+ProductName=TeeTree
+ProductVersion=2.0.0.0
+Comments=
+
+[Excluded Packages]
+
+[HistoryLists\hlIncludePath]
+
+[HistoryLists\hlLibraryPath]
+
+[HistoryLists\hlDebugSourcePath]
+
+[HistoryLists\hlConditionals]
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

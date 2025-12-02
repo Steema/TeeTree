@@ -1,0 +1,269 @@
+object FormTeeText: TFormTeeText
+  Left = 290
+  Top = 230
+
+  AutoScroll = False
+  ClientHeight = 245
+  ClientWidth = 382
+  Color = clBtnFace
+  ParentFont = True
+  OldCreateOrder = True
+  Position = poDefault
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 382
+    Height = 245
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Text'
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 374
+        Height = 217
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Panel2: TPanel
+          Left = 0
+          Top = 0
+          Width = 277
+          Height = 217
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Memo2: TMemo
+            Left = 0
+            Top = 0
+            Width = 277
+            Height = 217
+            Align = alClient
+            TabOrder = 0
+            OnChange = Memo2Change
+          end
+        end
+        object Panel1: TPanel
+          Left = 277
+          Top = 0
+          Width = 97
+          Height = 217
+          Align = alRight
+          BevelOuter = bvNone
+          TabOrder = 1
+          object Label3: TLabel
+            Left = 14
+            Top = 47
+            Width = 27
+            Height = 13
+            Alignment = taRightJustify
+            Caption = '&Color:'
+          end
+          object Shape5: TShape
+            Left = 46
+            Top = 43
+            Width = 24
+            Height = 23
+            Cursor = crHandPoint
+            OnMouseUp = Shape5MouseUp
+          end
+          object Button2: TButton
+            Left = 10
+            Top = 7
+            Width = 75
+            Height = 25
+            Caption = '&Font...'
+            TabOrder = 0
+            OnClick = Button2Click
+          end
+          object CBClip: TCheckBox
+            Left = 11
+            Top = 104
+            Width = 80
+            Height = 17
+            Caption = 'C&lip'
+            TabOrder = 1
+            OnClick = CBClipClick
+          end
+          object Button3: TButton
+            Left = 10
+            Top = 136
+            Width = 75
+            Height = 25
+            Caption = '&Edit...'
+            TabOrder = 2
+            OnClick = Button3Click
+          end
+          object CBVisible: TCheckBox
+            Left = 11
+            Top = 80
+            Width = 80
+            Height = 17
+            Caption = '&Visible'
+            TabOrder = 3
+            OnClick = CBVisibleClick
+          end
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Format'
+      ImageIndex = 1
+      object Label4: TLabel
+        Left = 49
+        Top = 81
+        Width = 30
+        Height = 13
+        Alignment = taRightJustify
+        Caption = '&Angle:'
+      end
+      object Label5: TLabel
+        Left = 40
+        Top = 112
+        Width = 36
+        Height = 13
+        Alignment = taRightJustify
+        Caption = '&Transp:'
+      end
+      object Edit2: TEdit
+        Left = 82
+        Top = 78
+        Width = 33
+        Height = 21
+        TabOrder = 0
+        Text = '0'
+        OnChange = Edit2Change
+      end
+      object UpDown2: TUpDown
+        Left = 115
+        Top = 78
+        Width = 16
+        Height = 21
+        Associate = Edit2
+        Min = -360
+        Max = 360
+        TabOrder = 1
+        Thousands = False
+        Wrap = True
+      end
+      object GroupBox2: TGroupBox
+        Left = 4
+        Top = 2
+        Width = 197
+        Height = 70
+        Caption = 'Alignment:'
+        TabOrder = 2
+        object Label2: TLabel
+          Left = 8
+          Top = 20
+          Width = 27
+          Height = 13
+          Alignment = taRightJustify
+          Caption = '&Horiz.'
+        end
+        object Label7: TLabel
+          Left = 8
+          Top = 44
+          Width = 22
+          Height = 13
+          Alignment = taRightJustify
+          Caption = '&Vert.'
+        end
+        object CBHorizAlign: TComboFlat
+          Left = 44
+          Top = 16
+          Width = 85
+          TabOrder = 0
+          OnChange = CBHorizAlignChange
+          Items.Strings = (
+            'Left'
+            'Center'
+            'Right')
+        end
+        object CBVertAlign: TComboFlat
+          Left = 44
+          Top = 40
+          Width = 85
+          TabOrder = 1
+          OnChange = CBVertAlignChange
+          Items.Strings = (
+            'Top'
+            'Center'
+            'Bottom')
+        end
+        object Edit3: TEdit
+          Left = 141
+          Top = 16
+          Width = 28
+          Height = 21
+          TabOrder = 2
+          Text = '0'
+          OnChange = Edit3Change
+        end
+        object UpDown3: TUpDown
+          Left = 169
+          Top = 16
+          Width = 16
+          Height = 21
+          Associate = Edit3
+          Min = -1000
+          Max = 1000
+          TabOrder = 3
+          Thousands = False
+          Wrap = True
+        end
+        object Edit4: TEdit
+          Left = 141
+          Top = 40
+          Width = 28
+          Height = 21
+          TabOrder = 4
+          Text = '0'
+          OnChange = Edit4Change
+        end
+        object UpDown4: TUpDown
+          Left = 169
+          Top = 40
+          Width = 16
+          Height = 21
+          Associate = Edit4
+          Min = -1000
+          Max = 1000
+          TabOrder = 5
+          Thousands = False
+          Wrap = True
+        end
+      end
+      object Edit7: TEdit
+        Left = 82
+        Top = 109
+        Width = 33
+        Height = 21
+        TabOrder = 3
+        Text = '0'
+        OnChange = Edit7Change
+      end
+      object UpDown7: TUpDown
+        Left = 115
+        Top = 109
+        Width = 16
+        Height = 21
+        Associate = Edit7
+        Increment = 5
+        TabOrder = 4
+        Thousands = False
+        Wrap = True
+      end
+    end
+    object TabFont: TTabSheet
+      Caption = 'Font'
+      ImageIndex = 2
+    end
+  end
+end

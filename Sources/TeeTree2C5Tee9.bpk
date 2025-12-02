@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value=".\TeeTree2C5Tee9.bpl"/>
+    <OBJFILES value="TreeEd.obj TeeTree.obj TreeCoEd.obj TeeDBTre.obj TreeFlow.obj TreeShEd.obj 
+      TreeTeEd.obj TreeChildManagers.obj TeeRecentFiles.obj TreeAnimate.obj 
+      TreeAnimateEditor.obj TreeAnimationGallery.obj TeeOfficeConstants.obj 
+      TreeConst.obj TreeDBEd.obj TreeElectric.obj TreeExport.obj 
+      TreeNavigator.obj TreeTransit.obj TreeUML.obj TeeTree2C5Tee9.obj"/>
+    <RESFILES value="TeeTree2C5Tee9.res"/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) TreeEd.dfm TreeCoEd.dfm TreeShEd.dfm TreeTeEd.dfm 
+      TreeAnimateEditor.dfm TreeAnimationGallery.dfm TreeDBEd.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="Vcl50.lib Vcldb50.lib"/>
+    <PACKAGES value="vcl50.bpi TeeLanguage9C5.bpi Vcldb50.bpi Tee9C5.bpi TeeUI9C5.bpi 
+      TeePro9C5.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="TeeTree2C5Tee9.cpp"/>
+    <INCLUDEPATH value="$(TEEINCPATH);$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(TEELIBPATH);$(BCB);$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\source\toolsapi"/>
+    <WARNINGS value="-w-par"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(TEEINCPATH);$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl50.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c
+      -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -v -JPHNE -M -U$(TEELIBPATH) -U$(BCB)\source\toolsapi
+      -D$(USERDEFINES)"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;TeeTree for C++ Builder 5&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=2
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=3082
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Steema Software
+FileDescription=TeeTree 2 for TeeChart 9
+FileVersion=1.0.0.0
+InternalName=TeeTree2C5Tee9
+LegalCopyright=Copyright (c) 1998-2025 by David Berneda
+LegalTrademarks=
+OriginalFilename=
+ProductName=TeeTree
+ProductVersion=2.0.0.0
+Comments=
+
+[Excluded Packages]
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

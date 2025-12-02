@@ -1,0 +1,448 @@
+object TreeAnimateEditor: TTreeAnimateEditor
+  Left = 303
+  Top = 317
+  AutoScroll = False
+  Caption = 'Animation Editor'
+  ClientHeight = 188
+  ClientWidth = 610
+  Color = clBtnFace
+  ParentFont = True
+  OldCreateOrder = True
+  Position = poScreenCenter
+  ShowHint = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Splitter2: TSplitter
+    Left = 149
+    Top = 0
+    Height = 188
+  end
+  object PanelAnim: TPanel
+    Left = 0
+    Top = 0
+    Width = 149
+    Height = 188
+    Align = alLeft
+    TabOrder = 0
+    OnResize = PanelAnimResize
+    object TeeInspector1: TTeeInspector
+      Left = 1
+      Top = 17
+      Width = 147
+      Height = 170
+      Align = alClient
+      BorderStyle = bsNone
+      DefaultColWidth = 60
+      Enabled = False
+      RowCount = 6
+      Options = [goFixedVertLine, goVertLine, goHorzLine, goColSizing, goThumbTracking]
+      TabOrder = 0
+      Items = <
+        item
+          Caption = 'Node'
+          Expanded = False
+          Style = iiSelection
+          Visible = False
+          OnChange = TeeInspector1Items0Change
+          OnGetItems = TeeInspector1Items0GetItems
+        end
+        item
+          Caption = 'Enabled'
+          Expanded = False
+          OnChange = TeeInspector1Items1Change
+        end
+        item
+          Caption = 'Start'
+          Expanded = False
+          Style = iiInteger
+          OnChange = TeeInspector1Items2Change
+        end
+        item
+          Caption = 'Duration'
+          Expanded = False
+          Style = iiInteger
+          OnChange = TeeInspector1Items3Change
+        end
+        item
+          Caption = 'Loop'
+          Expanded = False
+          OnChange = TeeInspector1Items4Change
+        end
+        item
+          Caption = 'Start Color'
+          Expanded = False
+          Style = iiColor
+          Visible = False
+          OnChange = TeeInspector1Items5Change
+        end
+        item
+          Caption = 'End Color'
+          Expanded = False
+          Style = iiColor
+          Visible = False
+          OnChange = TeeInspector1Items6Change
+        end
+        item
+          Caption = 'From Value'
+          Expanded = False
+          Style = iiInteger
+          Visible = False
+          OnChange = TeeInspector1Items7Change
+        end
+        item
+          Caption = 'To Value'
+          Expanded = False
+          Style = iiInteger
+          Visible = False
+          OnChange = TeeInspector1Items8Change
+        end
+        item
+          Caption = 'Direction'
+          Expanded = False
+          Style = iiSelection
+          Visible = False
+          OnChange = TeeInspector1Items9Change
+          OnGetItems = TeeInspector1Items9GetItems
+        end
+        item
+          Caption = 'Node Color'
+          Expanded = False
+          Style = iiSelection
+          Visible = False
+          OnChange = TeeInspector1Items10Change
+          OnGetItems = TeeInspector1Items10GetItems
+        end
+        item
+          Caption = 'Tree Color'
+          Expanded = False
+          Style = iiSelection
+          Visible = False
+          OnChange = TeeInspector1Items11Change
+          OnGetItems = TeeInspector1Items11GetItems
+        end
+        item
+          Caption = 'Zoom'
+          Expanded = False
+          Style = iiInteger
+          Value = 100
+          Visible = False
+        end
+        item
+          Caption = 'Size'
+          Enabled = False
+          Expanded = False
+          Style = iiInteger
+          Value = 100
+        end>
+      Header.Font.Color = clNavy
+      ColWidths = (
+        60
+        87)
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 147
+      Height = 16
+      Align = alTop
+      Alignment = taLeftJustify
+      BevelOuter = bvNone
+      Caption = ' Animation'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      object SBClose: TSpeedButton
+        Left = 128
+        Top = 0
+        Width = 16
+        Height = 15
+        Caption = 'x'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = SBCloseClick
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 152
+    Top = 0
+    Width = 458
+    Height = 188
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    object Splitter1: TSplitter
+      Left = 113
+      Top = 34
+      Height = 142
+    end
+    object Panel4: TPanel
+      Left = 0
+      Top = 0
+      Width = 458
+      Height = 34
+      Align = alTop
+      TabOrder = 0
+      object SBPlay: TSpeedButton
+        Left = 120
+        Top = 6
+        Width = 22
+        Height = 22
+        Hint = 'Play'
+        AllowAllUp = True
+        Flat = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          33333333333333333333EEEEEEEEEEEEEEE333FFFFFFFFFFFFF3E00000000000
+          00E337777777777777F3E0F77777777770E337F33333333337F3E0F333333333
+          70E337F3333F333337F3E0F33303333370E337F3337FF33337F3E0F333003333
+          70E337F33377FF3337F3E0F33300033370E337F333777FF337F3E0F333000033
+          70E337F33377773337F3E0F33300033370E337F33377733337F3E0F333003333
+          70E337F33377333337F3E0F33303333370E337F33373333337F3E0F333333333
+          70E337F33333333337F3E0FFFFFFFFFFF0E337FFFFFFFFFFF7F3E00000000000
+          00E33777777777777733EEEEEEEEEEEEEEE33333333333333333}
+        NumGlyphs = 2
+        OnClick = SBPlayClick
+      end
+      object SBPause: TSpeedButton
+        Left = 146
+        Top = 6
+        Width = 22
+        Height = 22
+        Hint = 'Pause'
+        AllowAllUp = True
+        GroupIndex = 1
+        Enabled = False
+        Flat = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          33333333333333333333EEEEEEEEEEEEEEE333FFFFFFFFFFFFF3E00000000000
+          00E337777777777777F3E0F77777777770E337F33333333337F3E0F333333333
+          70E337F33333333337F3E0F33333333370E337F333FF3FF337F3E0F330030033
+          70E337F3377F77F337F3E0F33003003370E337F3377F77F337F3E0F330030033
+          70E337F3377F77F337F3E0F33003003370E337F3377F77F337F3E0F330030033
+          70E337F33773773337F3E0F33333333370E337F33333333337F3E0F333333333
+          70E337F33333333337F3E0FFFFFFFFFFF0E337FFFFFFFFFFF7F3E00000000000
+          00E33777777777777733EEEEEEEEEEEEEEE33333333333333333}
+        NumGlyphs = 2
+        OnClick = SBPauseClick
+      end
+      object SBStop: TSpeedButton
+        Left = 173
+        Top = 6
+        Width = 22
+        Height = 22
+        Hint = 'Stop'
+        AllowAllUp = True
+        Enabled = False
+        Flat = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          33333333333333333333EEEEEEEEEEEEEEE333FFFFFFFFFFFFF3E00000000000
+          00E337777777777777F3E0F77777777770E337F33333333337F3E0F333333333
+          70E337F33333333337F3E0F33333333370E337F333FFFFF337F3E0F330000033
+          70E337F3377777F337F3E0F33000003370E337F3377777F337F3E0F330000033
+          70E337F3377777F337F3E0F33000003370E337F3377777F337F3E0F330000033
+          70E337F33777773337F3E0F33333333370E337F33333333337F3E0F333333333
+          70E337F33333333337F3E0FFFFFFFFFFF0E337FFFFFFFFFFF7F3E00000000000
+          00E33777777777777733EEEEEEEEEEEEEEE33333333333333333}
+        NumGlyphs = 2
+        OnClick = SBStopClick
+      end
+      object SBFrame: TSpeedButton
+        Left = 201
+        Top = 6
+        Width = 23
+        Height = 22
+        Hint = 'Next Frame'
+        Caption = '>>'
+        Enabled = False
+        Flat = True
+        OnClick = SBFrameClick
+      end
+      object SpeedButton5: TSpeedButton
+        Left = 23
+        Top = 7
+        Width = 22
+        Height = 22
+        Hint = 'Add Animation'
+        Flat = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          0400000000000001000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFF4444FFFFFFFFFFFF8888FFFFFFFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFFFFFFF4444FFFFFFFFFFFF8888FFFFFFFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFFFFFFF4444FFFFFFFFFFFF8888FFFFFFFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFF44444444444444FF88888888888888FF44444444444
+          444FF88888888888888FF44444444444444FF88888888888888FFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFFFFFFF4444FFFFFFFFFFFF8888FFFFFFFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFFFFFFF4444FFFFFFFFFFFF8888FFFFFFFFFFFF4444FF
+          FFFFFFFFFF8888FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+        NumGlyphs = 2
+        OnClick = SpeedButton5Click
+      end
+      object SpeedButton6: TSpeedButton
+        Left = 52
+        Top = 7
+        Width = 22
+        Height = 22
+        Hint = 'Delete'
+        Enabled = False
+        Flat = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          0400000000000001000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFF11111111111111FF88888888888888FF11111111111
+          111FF88888888888888FF11111111111111FF88888888888888FFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+        NumGlyphs = 2
+        OnClick = SpeedButton6Click
+      end
+      object Label3: TLabel
+        Left = 254
+        Top = 9
+        Width = 34
+        Height = 13
+        Alignment = taRightJustify
+        Caption = 'Speed:'
+      end
+      object TrackBar1: TTrackBar
+        Left = 288
+        Top = 7
+        Width = 81
+        Height = 19
+        Hint = 'Speed'
+        Max = 100
+        Min = 2
+
+        Frequency = 5
+        Position = 50
+        TabOrder = 0
+
+        OnChange = TrackBar1Change
+      end
+      object CBLoop: TCheckBox
+        Left = 376
+        Top = 8
+        Width = 49
+        Height = 17
+        Caption = '&Loop'
+        TabOrder = 1
+        OnClick = CBLoopClick
+      end
+      object Panel2: TPanel
+        Left = 427
+        Top = 1
+        Width = 30
+        Height = 32
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 2
+        object UpScale: TUpDown
+          Left = 1
+          Top = 4
+          Width = 26
+          Height = 16
+          Min = 1
+          Max = 6
+          Orientation = udHorizontal
+          Position = 3
+          TabOrder = 0
+          OnClick = UpScaleClick
+        end
+      end
+    end
+    object Tree1: TTree
+      Left = 0
+      Top = 34
+      Width = 113
+      Height = 142
+      AllowPanning = pmVertical
+      AnimatedZoomSteps = 3
+      CrossBox.SignPen.Width = 0
+      Selected.ScrollToView = False
+      VertScrollBar.Automatic = False
+      Zoom.Allow = False
+      Zoom.AnimatedSteps = 3
+      Zoom.Pen.Mode = pmNotXor
+      OnDeletedShapes = Tree1DeletedShapes
+      OnSelectShape = Tree1SelectShape
+      Align = alLeft
+      TabOrder = 1
+      DefaultCanvas = 'TGDIPlusCanvas'
+    end
+    object Ruler: TTreeRuler
+      Left = 0
+      Top = 176
+      Width = 458
+      Height = 12
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Height = -9
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      Marker.Color = clRed
+      Tree = TreeMap
+      OnGetUnit = RulerGetUnit
+      Align = alBottom
+      BorderStyle = bsNone
+      Color = clBtnFace
+      TabOrder = 2
+    end
+    object TreeMap: TTree
+      Left = 116
+      Top = 34
+      Width = 342
+      Height = 142
+      AllowPanning = pmHorizontal
+      AnimatedZoomSteps = 3
+      CrossBox.SignPen.Width = 0
+      Grid.Visible = True
+      TextEditor.Enabled = False
+      Zoom.Allow = False
+      Zoom.AnimatedSteps = 3
+      Zoom.Pen.Mode = pmNotXor
+      OnAfterDraw = TreeMapAfterDraw
+      OnDeletingShapes = TreeMapDeletingShapes
+      OnDeletedShapes = TreeMapDeletedShapes
+      OnMovingShape = TreeMapMovingShape
+      OnResizingShape = TreeMapResizingShape
+      OnSelectShape = TreeMapSelectShape
+      OnScroll = TreeMapScroll
+      Align = alClient
+      TabOrder = 3
+      DefaultCanvas = 'TGDIPlusCanvas'
+    end
+  end
+end
