@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="TreeViewer.exe"/>
+    <OBJFILES value="TreeViewer.obj UTreeViewer.obj"/>
+    <RESFILES value="TreeViewer.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) UTreeViewer.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="TeeUI9C6.lib TeePro9C6.lib Tee9C6.lib TeeLanguage9C6.lib TeeTree2C6Tee9.lib"/>
+    <SPARELIBS value="vcl.lib vclx.lib rtl.lib dbrtl.lib TeeTree2C6Tee9.lib TeeLanguage9C6.lib 
+      Tee9C6.lib TeePro9C6.lib TeeUI9C6.lib"/>
+    <PACKAGES value="vcl.bpi vclx.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi 
+      bdertl.bpi vcldbx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="TreeViewer.cpp"/>
+    <INCLUDEPATH value="$(TEEINCPATH);$(BCB)\projects;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(TEELIBPATH);$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(TEEINCPATH) -I$(BCB)\projects -I$(BCB)\include -I$(BCB)\include\vcl 
+      -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="TreeViewer.res" FORMNAME="" UNITNAME="TreeViewer.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TreeViewer.cpp" FORMNAME="" UNITNAME="TreeViewer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UTreeViewer.cpp" FORMNAME="Viewer" UNITNAME="UTreeViewer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=2
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2067
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Steema Software
+FileDescription=TeeTree Viewer
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=Copyright (c) 2001-2008 by David Berneda
+LegalTrademarks=
+OriginalFilename=
+ProductName=TeeTree
+ProductVersion=2.0.0.0
+Comments=
+
+[Excluded Packages]
+
+[HistoryLists\hlIncludePath]
+
+[HistoryLists\hlLibraryPath]
+
+[HistoryLists\hlDebugSourcePath]
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+  </IDEOPTIONS>
+</PROJECT>

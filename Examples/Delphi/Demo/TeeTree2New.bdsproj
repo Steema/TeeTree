@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality" Type="String">DelphiDotNet.Personality</Option>
+      <Option Name="ProjectType" Type="String"></Option>
+      <Option Name="Version" Type="String">1.0</Option>
+      <Option Name="GUID" Type="String">{A0AE8D49-CE72-475F-960C-10600C992151}</Option>
+    </Option>
+  </PersonalityInfo>
+  <DelphiDotNet.Personality>
+    <Source>
+      <Source Name="MainSource" Type="String">TeeTree2New.dpr</Source>
+    </Source>
+    
+    
+    <FileVersion>
+      <FileVersion Name="Version" Type="String">7.0</FileVersion>
+    </FileVersion>
+    <Compiler>
+      <Compiler Name="A" Type="Integer">1</Compiler>
+      <Compiler Name="B" Type="Integer">0</Compiler>
+      <Compiler Name="C" Type="Integer">1</Compiler>
+      <Compiler Name="D" Type="Integer">1</Compiler>
+      <Compiler Name="E" Type="Integer">0</Compiler>
+      <Compiler Name="F" Type="Integer">0</Compiler>
+      <Compiler Name="G" Type="Integer">1</Compiler>
+      <Compiler Name="H" Type="Integer">1</Compiler>
+      <Compiler Name="I" Type="Integer">1</Compiler>
+      <Compiler Name="J" Type="Integer">0</Compiler>
+      <Compiler Name="K" Type="Integer">0</Compiler>
+      <Compiler Name="L" Type="Integer">1</Compiler>
+      <Compiler Name="M" Type="Integer">0</Compiler>
+      <Compiler Name="N" Type="Integer">1</Compiler>
+      <Compiler Name="O" Type="Integer">1</Compiler>
+      <Compiler Name="P" Type="Integer">1</Compiler>
+      <Compiler Name="Q" Type="Integer">0</Compiler>
+      <Compiler Name="R" Type="Integer">0</Compiler>
+      <Compiler Name="S" Type="Integer">0</Compiler>
+      <Compiler Name="T" Type="Integer">0</Compiler>
+      <Compiler Name="U" Type="Integer">0</Compiler>
+      <Compiler Name="V" Type="Integer">1</Compiler>
+      <Compiler Name="W" Type="Integer">0</Compiler>
+      <Compiler Name="X" Type="Integer">1</Compiler>
+      <Compiler Name="Y" Type="Integer">2</Compiler>
+      <Compiler Name="Z" Type="Integer">1</Compiler>
+      <Compiler Name="ShowHints" Type="Boolean">True</Compiler>
+      <Compiler Name="ShowWarnings" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitAliases" Type="String">WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</Compiler>
+      <Compiler Name="NamespacePrefix" Type="String"></Compiler>
+      <Compiler Name="SymbolDeprecated" Type="Boolean">True</Compiler>
+      <Compiler Name="SymbolLibrary" Type="Boolean">True</Compiler>
+      <Compiler Name="SymbolPlatform" Type="Boolean">True</Compiler>
+      <Compiler Name="SymbolExperimental" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitLibrary" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitPlatform" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitDeprecated" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitExperimental" Type="Boolean">True</Compiler>
+      <Compiler Name="HResultCompat" Type="Boolean">True</Compiler>
+      <Compiler Name="HidingMember" Type="Boolean">True</Compiler>
+      <Compiler Name="HiddenVirtual" Type="Boolean">True</Compiler>
+      <Compiler Name="Garbage" Type="Boolean">True</Compiler>
+      <Compiler Name="BoundsError" Type="Boolean">True</Compiler>
+      <Compiler Name="ZeroNilCompat" Type="Boolean">True</Compiler>
+      <Compiler Name="StringConstTruncated" Type="Boolean">True</Compiler>
+      <Compiler Name="ForLoopVarVarPar" Type="Boolean">True</Compiler>
+      <Compiler Name="TypedConstVarPar" Type="Boolean">True</Compiler>
+      <Compiler Name="AsgToTypedConst" Type="Boolean">True</Compiler>
+      <Compiler Name="CaseLabelRange" Type="Boolean">True</Compiler>
+      <Compiler Name="ForVariable" Type="Boolean">True</Compiler>
+      <Compiler Name="ConstructingAbstract" Type="Boolean">True</Compiler>
+      <Compiler Name="ComparisonFalse" Type="Boolean">True</Compiler>
+      <Compiler Name="ComparisonTrue" Type="Boolean">True</Compiler>
+      <Compiler Name="ComparingSignedUnsigned" Type="Boolean">True</Compiler>
+      <Compiler Name="CombiningSignedUnsigned" Type="Boolean">True</Compiler>
+      <Compiler Name="UnsupportedConstruct" Type="Boolean">True</Compiler>
+      <Compiler Name="FileOpen" Type="Boolean">True</Compiler>
+      <Compiler Name="FileOpenUnitSrc" Type="Boolean">True</Compiler>
+      <Compiler Name="BadGlobalSymbol" Type="Boolean">True</Compiler>
+      <Compiler Name="DuplicateConstructorDestructor" Type="Boolean">True</Compiler>
+      <Compiler Name="InvalidDirective" Type="Boolean">True</Compiler>
+      <Compiler Name="PackageNoLink" Type="Boolean">True</Compiler>
+      <Compiler Name="PackageThreadVar" Type="Boolean">True</Compiler>
+      <Compiler Name="ImplicitImport" Type="Boolean">True</Compiler>
+      <Compiler Name="HPPEMITIgnored" Type="Boolean">True</Compiler>
+      <Compiler Name="NoRetVal" Type="Boolean">True</Compiler>
+      <Compiler Name="UseBeforeDef" Type="Boolean">True</Compiler>
+      <Compiler Name="ForLoopVarUndef" Type="Boolean">True</Compiler>
+      <Compiler Name="UnitNameMismatch" Type="Boolean">True</Compiler>
+      <Compiler Name="NoCFGFileFound" Type="Boolean">True</Compiler>
+      <Compiler Name="MessageDirective" Type="Boolean">True</Compiler>
+      <Compiler Name="ImplicitVariants" Type="Boolean">True</Compiler>
+      <Compiler Name="UnicodeToLocale" Type="Boolean">True</Compiler>
+      <Compiler Name="LocaleToUnicode" Type="Boolean">True</Compiler>
+      <Compiler Name="ImagebaseMultiple" Type="Boolean">True</Compiler>
+      <Compiler Name="SuspiciousTypecast" Type="Boolean">True</Compiler>
+      <Compiler Name="PrivatePropAccessor" Type="Boolean">True</Compiler>
+      <Compiler Name="UnsafeType" Type="Boolean">True</Compiler>
+      <Compiler Name="UnsafeCode" Type="Boolean">True</Compiler>
+      <Compiler Name="UnsafeCast" Type="Boolean">True</Compiler>
+      <Compiler Name="OptionTruncated" Type="Boolean">True</Compiler>
+      <Compiler Name="WideCharReduced" Type="Boolean">True</Compiler>
+    </Compiler>
+    <Linker>
+      <Linker Name="MapFile" Type="Integer">0</Linker>
+      <Linker Name="OutputObjs" Type="Integer">0</Linker>
+      <Linker Name="ConsoleApp" Type="Integer">1</Linker>
+      <Linker Name="DebugInfo" Type="Boolean">True</Linker>
+      <Linker Name="RemoteSymbols" Type="Boolean">False</Linker>
+      <Linker Name="MinStackSize" Type="Integer">4096</Linker>
+      <Linker Name="MaxStackSize" Type="Integer">1048576</Linker>
+      <Linker Name="ImageBase" Type="Integer">4194304</Linker>
+      <Linker Name="ExeDescription" Type="String"></Linker>
+    </Linker>
+    <Directories>
+      <Directories Name="OutputDir" Type="String"></Directories>
+      <Directories Name="UnitOutputDir" Type="String"></Directories>
+      <Directories Name="PackageDLLOutputDir" Type="String"></Directories>
+      <Directories Name="PackageDCPOutputDir" Type="String"></Directories>
+      <Directories Name="SearchPath" Type="String">$(TEELIBPATH);$(BDS)\units</Directories>
+      <Directories Name="Packages" Type="String">C:\windows\microsoft.net\framework\v1.1.4322\System.Drawing.dll</Directories>
+      <Directories Name="Conditionals" Type="String"></Directories>
+      <Directories Name="DebugSourceDirs" Type="String">$(TEELIBPATH);$(BDS)\units</Directories>
+      <Directories Name="UsePackages" Type="Boolean">True</Directories>
+    </Directories>
+    <Parameters>
+      <Parameters Name="RunParams" Type="String"></Parameters>
+      <Parameters Name="HostApplication" Type="String"></Parameters>
+      <Parameters Name="Launcher" Type="String"></Parameters>
+      <Parameters Name="UseLauncher" Type="Boolean">False</Parameters>
+      <Parameters Name="DebugCWD" Type="String"></Parameters>
+    </Parameters>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo" Type="Boolean">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="MajorVer" Type="Integer">2</VersionInfo>
+      <VersionInfo Name="MinorVer" Type="Integer">0</VersionInfo>
+      <VersionInfo Name="Release" Type="Integer">1</VersionInfo>
+      <VersionInfo Name="Build" Type="Integer">48</VersionInfo>
+      <VersionInfo Name="Debug" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="PreRelease" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="Special" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="Private" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="DLL" Type="Boolean">False</VersionInfo>
+      <VersionInfo Name="Locale" Type="Integer">1033</VersionInfo>
+      <VersionInfo Name="CodePage" Type="Integer">1252</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName" Type="String">Steema Software</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription" Type="String">TeeTree v2 - What's New?</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion" Type="String">2.0.1.48</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName" Type="String">TeeTree2New</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright" Type="String">Copyright (c) 2000-2006 by David Berneda.</VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename" Type="String">TeeTree2New.exe</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName" Type="String">TeeTree</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion" Type="String">2.0.1.0</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks" Type="String"></VersionInfoKeys>
+      <VersionInfoKeys Name="Comments" Type="String"></VersionInfoKeys>
+    </VersionInfoKeys>
+
+    <FileList>
+      <File FileName="C:\windows\microsoft.net\framework\v1.1.4322\System.Drawing.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="System.Drawing" AssemblyName="System.Drawing" Version="1.0.5000.0"/>
+      <File FileName="TreeMain.pas" ContainerId="" ModuleName="TreeMain"/>
+      <File FileName="Main.pas" ContainerId="" ModuleName="Main"/>
+      <File FileName="Base.pas" ContainerId="" ModuleName="Base"/>
+      <File FileName="Starting.pas" ContainerId="" ModuleName="Starting"/>
+      <File FileName="Ordering.pas" ContainerId="" ModuleName="Ordering"/>
+      <File FileName="NodeBorder.pas" ContainerId="" ModuleName="NodeBorder"/>
+      <File FileName="TextAlignment.pas" ContainerId="" ModuleName="TextAlignment"/>
+      <File FileName="ClipText.pas" ContainerId="" ModuleName="ClipText"/>
+      <File FileName="AddChildNode.pas" ContainerId="" ModuleName="AddChildNode"/>
+      <File FileName="NodeBrush.pas" ContainerId="" ModuleName="NodeBrush"/>
+      <File FileName="NodeCursor.pas" ContainerId="" ModuleName="NodeCursor"/>
+      <File FileName="NodeFont.pas" ContainerId="" ModuleName="NodeFont"/>
+      <File FileName="NodeGradient.pas" ContainerId="" ModuleName="NodeGradient"/>
+      <File FileName="NodeShadow.pas" ContainerId="" ModuleName="NodeShadow"/>
+      <File FileName="NodeStyle.pas" ContainerId="" ModuleName="NodeStyle"/>
+      <File FileName="NodeTransparency.pas" ContainerId="" ModuleName="NodeTransparency"/>
+      <File FileName="TextAngle.pas" ContainerId="" ModuleName="TextAngle"/>
+      <File FileName="NodeImageIndex.pas" ContainerId="" ModuleName="NodeImageIndex"/>
+      <File FileName="ImageLevels.pas" ContainerId="" ModuleName="ImageLevels"/>
+      <File FileName="SortingNodes.pas" ContainerId="" ModuleName="SortingNodes"/>
+      <File FileName="BufferedDisplay.pas" ContainerId="" ModuleName="BufferedDisplay"/>
+      <File FileName="TreeBackImage.pas" ContainerId="" ModuleName="TreeBackImage"/>
+      <File FileName="ImageZoom.pas" ContainerId="" ModuleName="ImageZoom"/>
+      <File FileName="NodeImageAlign.pas" ContainerId="" ModuleName="NodeImageAlign"/>
+      <File FileName="TextExportImport.pas" ContainerId="" ModuleName="TextExportImport"/>
+      <File FileName="ExpandCollapse.pas" ContainerId="" ModuleName="ExpandCollapse"/>
+      <File FileName="CreateOnDemand.pas" ContainerId="" ModuleName="CreateOnDemand"/>
+      <File FileName="NodeEvents.pas" ContainerId="" ModuleName="NodeEvents"/>
+      <File FileName="NodeAutoSize.pas" ContainerId="" ModuleName="NodeAutoSize"/>
+      <File FileName="NodeDataTag.pas" ContainerId="" ModuleName="NodeDataTag"/>
+      <File FileName="NodeDrawOrder.pas" ContainerId="" ModuleName="NodeDrawOrder"/>
+      <File FileName="NodeHints.pas" ContainerId="" ModuleName="NodeHints"/>
+      <File FileName="TreeImageList.pas" ContainerId="" ModuleName="TreeImageList"/>
+      <File FileName="NodeImageSize.pas" ContainerId="" ModuleName="NodeImageSize"/>
+      <File FileName="NodeLevel.pas" ContainerId="" ModuleName="NodeLevel"/>
+      <File FileName="TreeSpeed.pas" ContainerId="" ModuleName="TreeSpeed"/>
+      <File FileName="TreeGradient.pas" ContainerId="" ModuleName="TreeGradient"/>
+      <File FileName="TreeGrid.pas" ContainerId="" ModuleName="TreeGrid"/>
+      <File FileName="TreeAllowDelete.pas" ContainerId="" ModuleName="TreeAllowDelete"/>
+      <File FileName="CircularAlign.pas" ContainerId="" ModuleName="CircularAlign"/>
+      <File FileName="PolygonShape.pas" ContainerId="" ModuleName="PolygonShape"/>
+      <File FileName="TreeOffice.pas" ContainerId="" ModuleName="TreeOffice"/>
+      <File FileName="DragFromEdit.pas" ContainerId="" ModuleName="DragFromEdit"/>
+      <File FileName="DragDropSingle.pas" ContainerId="" ModuleName="DragDropSingle"/>
+      <File FileName="ScrollBars.pas" ContainerId="" ModuleName="ScrollBars"/>
+      <File FileName="HotTrack.pas" ContainerId="" ModuleName="HotTrack"/>
+      <File FileName="Scrolling.pas" ContainerId="" ModuleName="Scrolling"/>
+      <File FileName="Zooming.pas" ContainerId="" ModuleName="Zooming"/>
+      <File FileName="EditorPanel.pas" ContainerId="" ModuleName="EditorPanel"/>
+      <File FileName="MouseWheel.pas" ContainerId="" ModuleName="MouseWheel"/>
+      <File FileName="CustomShape.pas" ContainerId="" ModuleName="CustomShape"/>
+      <File FileName="CrossBox.pas" ContainerId="" ModuleName="CrossBox"/>
+      <File FileName="CustomDraw.pas" ContainerId="" ModuleName="CustomDraw"/>
+      <File FileName="DesignMode.pas" ContainerId="" ModuleName="DesignMode"/>
+      <File FileName="ClipboardCopy.pas" ContainerId="" ModuleName="ClipboardCopy"/>
+      <File FileName="PrintPreviewPanel.pas" ContainerId="" ModuleName="PrintPreviewPanel"/>
+      <File FileName="BrotherIndex.pas" ContainerId="" ModuleName="BrotherIndex"/>
+      <File FileName="RemoveNodes.pas" ContainerId="" ModuleName="RemoveNodes"/>
+      <File FileName="AddMethods.pas" ContainerId="" ModuleName="AddMethods"/>
+      <File FileName="OtherComponents.pas" ContainerId="" ModuleName="OtherComponents"/>
+      <File FileName="TopBottomAlign.pas" ContainerId="" ModuleName="TopBottomAlign"/>
+      <File FileName="LeftRightAlign.pas" ContainerId="" ModuleName="LeftRightAlign"/>
+      <File FileName="ExplorerAlign.pas" ContainerId="" ModuleName="ExplorerAlign"/>
+      <File FileName="ExplorerRightAlign.pas" ContainerId="" ModuleName="ExplorerRightAlign"/>
+      <File FileName="ListViewAlign.pas" ContainerId="" ModuleName="ListViewAlign"/>
+      <File FileName="SaveLoadFile.pas" ContainerId="" ModuleName="SaveLoadFile"/>
+      <File FileName="ConnectionAdd.pas" ContainerId="" ModuleName="ConnectionAdd"/>
+      <File FileName="ConnectionFormat.pas" ContainerId="" ModuleName="ConnectionFormat"/>
+      <File FileName="ConnectionText.pas" ContainerId="" ModuleName="ConnectionText"/>
+      <File FileName="Animations.pas" ContainerId="" ModuleName="Animations"/>
+      <File FileName="TreeRuler.pas" ContainerId="" ModuleName="TreeRuler"/>
+      <File FileName="TreePageNavigator.pas" ContainerId="" ModuleName="TreePageNavigator"/>
+      <File FileName="TreeEdit.pas" ContainerId="" ModuleName="TreeEdit"/>
+      <File FileName="Exporting.pas" ContainerId="" ModuleName="Exporting"/>
+      <File FileName="AddingText.pas" ContainerId="" ModuleName="AddingText"/>
+      <File FileName="PolylineShape.pas" ContainerId="" ModuleName="PolylineShape"/>
+      <File FileName="GridShape.pas" ContainerId="" ModuleName="GridShape"/>
+      <File FileName="MultiColumn.pas" ContainerId="" ModuleName="MultiColumn"/>
+      <File FileName="ConnectionPoints.pas" ContainerId="" ModuleName="ConnectionPoints"/>
+      <File FileName="TreeComponent.pas" ContainerId="" ModuleName="TreeComponent"/>
+      <File FileName="TreeReadOnly.pas" ContainerId="" ModuleName="TreeReadOnly"/>
+      <File FileName="BaseDB.pas" ContainerId="" ModuleName="BaseDB"/>
+      <File FileName="DBTreeComponent.pas" ContainerId="" ModuleName="DBTreeComponent"/>
+      <File FileName="DBTreeWizard.pas" ContainerId="" ModuleName="DBTreeWizard"/>
+      <File FileName="DBTreeMasterDetail.pas" ContainerId="" ModuleName="DBTreeMasterDetail"/>
+      <File FileName="DBTreeGroup.pas" ContainerId="" ModuleName="DBTreeGroup"/>
+      <File FileName="DBTreeFormat.pas" ContainerId="" ModuleName="DBTreeFormat"/>
+      <File FileName="InspectorComponent.pas" ContainerId="" ModuleName="InspectorComponent"/>
+      <File FileName="TreeRoots.pas" ContainerId="" ModuleName="TreeRoots"/>
+      <File FileName="TreeShapes.pas" ContainerId="" ModuleName="TreeShapes"/>
+      <File FileName="DragDropMultiTree.pas" ContainerId="" ModuleName="DragDropMultiTree"/>
+      <File FileName="ExportXMLExcel.pas" ContainerId="" ModuleName="ExportXMLExcel"/>
+      <File FileName="Monochrome.pas" ContainerId="" ModuleName="Monochrome"/>
+      <File FileName="CustomInspector.pas" ContainerId="" ModuleName="CustomInspector"/>
+      <File FileName="TreeConnections.pas" ContainerId="" ModuleName="TreeConnections"/>
+      <File FileName="TreeSelected.pas" ContainerId="" ModuleName="TreeSelected"/>
+      <File FileName="SelectingNodes.pas" ContainerId="" ModuleName="SelectingNodes"/>
+      <File FileName="NodeHandles.pas" ContainerId="" ModuleName="NodeHandles"/>
+      <File FileName="KeyboardNavigation.pas" ContainerId="" ModuleName="KeyboardNavigation"/>
+      <File FileName="GlobalFormat.pas" ContainerId="" ModuleName="GlobalFormat"/>
+      <File FileName="ZoomScroll.pas" ContainerId="" ModuleName="ZoomScroll"/>
+    </FileList>
+  </DelphiDotNet.Personality>
+</BorlandProject>

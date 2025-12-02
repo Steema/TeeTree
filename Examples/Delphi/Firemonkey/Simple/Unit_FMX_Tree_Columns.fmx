@@ -1,0 +1,12 @@
+object TreeColumns: TTreeColumns
+  Left = 0
+  Top = 0
+  Caption = 'TeeTree for FireMonkey - Columns Example'
+  ClientHeight = 369
+  ClientWidth = 721
+  Position = poScreenCenter
+  FormFactor.Width = 1366
+  FormFactor.Height = 768
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+end

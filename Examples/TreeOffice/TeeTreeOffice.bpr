@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="TeeTreeOffice.exe"/>
+    <OBJFILES value="UTreeOffice.obj TeeNewDataSet.obj TreeEd.obj TeeTreeOffice.obj"/>
+    <RESFILES value="TeeTreeOffice.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) UTreeOffice.dfm TeeNewDataSet.dfm TreeEd.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="TEEUI9C5.lib TEEPRO9C5.lib TEE9C5.lib"/>
+    <SPARELIBS value="Vclx50.lib Vcl50.lib TEETREE2C5Tee9.lib Vcldb50.lib teeimage9c5.lib 
+      TEE9C5.lib TEEPRO9C5.lib TEEUI9C5.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Vcldb50.bpi Vclbde50.bpi vcldbx50.bpi 
+      vcljpg50.bpi teeimage9c5.bpi TeeTree2C5Tee9.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="TeeTreeOffice.cpp"/>
+    <INCLUDEPATH value="$(TEEINCPATH);$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;..\..\sources9"/>
+    <LIBPATH value="..\..\..\TeeChartVCL\Sources9\Compiled\Builder5\Lib;$(TEELIBPATH);$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\sources9;..\..\Sources9\Compiled\Builder5\Lib"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(TEEINCPATH) -I$(BCB)\Projects -I$(BCB)\include -I$(BCB)\include\vcl 
+      -I..\..\sources9 -src_suffix cpp"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl50.csm -Hc -w -Vx -Ve -X- -a1 -5 -b- -k- -vi -c -tW 
+      -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$J- -$D- -$C- -v -JPHNE -M -I$(TEEINCPATH) -U$(TEELIBPATH)"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;TeeTree Office 2.0&quot; -aa -Tpe -x -w"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=2
+MinorVer=0
+Release=5
+Build=656
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Steema Software SL
+FileDescription=TeeTree Office
+FileVersion=2.0.5.656
+InternalName=TeeTreeOffice
+LegalCopyright=1998-2003 by David Berneda. All Rights Reserved.
+LegalTrademarks=
+OriginalFilename=TeeTreeOffice
+ProductName=TeeTree
+ProductVersion=2.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\Root\TeeChartVCL\Sources9\Compiled\Builder5\Bin\DclTeePro9C5.bpl=TeeChart Pro 9 Components
+$(BCB)\Bin\dcltee50.bpl=TeeChart 5.0 Components
+$(BCB)\Bin\dcldss50.bpl=Borland Decision Cube Components
+$(BCB)\Bin\dcltqr50.bpl=TeeChart 5.0 for QuickReport Components Design Package
+
+[HistoryLists\hlIncludePath]
+Count=3
+Item0=$(TEEINCPATH);$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;..\..\sources9
+Item1=$(TEEINCPATH);$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;c:\root\teetreevcl\sources9
+Item2=$(TEEINCPATH);$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=..\..\..\TeeChartVCL\Sources9\Compiled\Builder5\Lib;$(TEELIBPATH);$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\sources9;C:\root\TeeTreeVCL\Sources9\Compiled\Builder5\Lib
+Item1=..\..\..\TeeChartVCL\Sources9\Compiled\Builder5\Lib;$(TEELIBPATH);$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\sources9
+Item2=..\..\..\TeeChartVCL\Sources9\Compiled\Builder5\Lib;$(TEELIBPATH);$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\..\Teetreevcl\sources9
+Item3=..\..\..\TeeChartVCL\Sources9\Compiled\Builder5\Lib;$(TEELIBPATH);$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

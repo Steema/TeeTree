@@ -1,0 +1,41 @@
+object SettingsForm: TSettingsForm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 460
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop]
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
+  DesignerOrientation = 0
+  object Layout1: TLayout
+    Align = alTop
+    Height = 50.000000000000000000
+    Width = 320.000000000000000000
+    object Button1: TButton
+      Height = 31.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 8.000000000000000000
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 0
+      Text = 'Back'
+      Trimming = ttCharacter
+      Width = 73.000000000000000000
+      OnClick = Button1Click
+    end
+  end
+  object CheckBox1: TCheckBox
+    Height = 19.000000000000000000
+    IsChecked = True
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    TabOrder = 1
+    Text = 'Lines'
+    Width = 120.000000000000000000
+    OnChange = CheckBox1Change
+  end
+end
