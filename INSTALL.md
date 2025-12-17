@@ -20,15 +20,15 @@ If not, then the [Sources\Packages\Lite](https://github.com/Steema/TeeTree/tree/
 These use the free TeeChart version (VCL and FMX) included in Delphi / C++ RAD Studio ide.
 
 ### Steps to build the Lite version:
-
-1) Install the free [TeeChart Lite update for RAD 13.0 Florence](https://www.steema.com/files/public/teechart/vcl/TeeChart_Lite_RAD13_Patch_251209.7z). This update includes files necessary for TeeTree.
-2) Run RAD 13 and open this file: [Sources\Packages\Lite\TeeTree_Lite.groupproj](https://github.com/Steema/TeeTree/tree/main/Sources/Packages/Lite)
-3) Right-click the DclVCL package and click "Install"
-4) Right-click the DclFMX package and click "Install" (for Firemonkey)
+   
+1) Open this file with RAD Studio: [Sources\Packages\Lite\TeeTree_Lite.groupproj](https://github.com/Steema/TeeTree/tree/main/Sources/Packages/Lite)
+2) Right-click the DclVCL package and click "Install"
+3) Right-click the DclFMX package and click "Install" (for Firemonkey)
 
 <img width="422" height="300" alt="image" src="https://github.com/user-attachments/assets/2e4ecfbf-269f-4841-bffb-c946bacc450b" />
 
-   
+Optional: Install the free [TeeChart Lite update for RAD 13.0 Florence](https://www.steema.com/files/public/teechart/vcl/TeeChart_Lite_RAD13_Patch_251209.7z)  
+
 ### Using TeeTree
 
 Create a new VCL Application, you should see the TTree component at the Component Palette:
