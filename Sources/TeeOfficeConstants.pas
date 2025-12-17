@@ -1,4 +1,4 @@
-{**********************************************}
+﻿{**********************************************}
 {   TeeChart Office - Constant strings         }
 {   Copyright (c) 2001-2025 by Steema Software }
 {   All Rights Reserved.                       }
@@ -105,11 +105,22 @@ Procedure TeeOfficeHungarian;
 
 implementation
 
-Uses TeeSpanish, TeeCatalan, TeeGerman, TeeFrench, TeeDanish, TeeDutch,
-     TeeChinese, TeeBrazil, TeeSwedish, TeeChineseSimp, TeePortuguese,
-     TeeRussian, TeeItalian, TeeNorwegian, TeeJapanese, TeePolish,
-     TeeSlovene, TeeTurkish, TeeHungarian, TeeGalician,
-     TeeConst, TeeProCo, SysUtils;
+uses
+  TeeConst,
+
+  {$IF TeeMsg_TeeChartPalette='TeeChart'}
+  {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+  {$ENDIF}
+
+  {$IFDEF TEEPRO}
+  TeeSpanish, TeeCatalan, TeeGerman, TeeFrench, TeeDanish, TeeDutch,
+  TeeChinese, TeeBrazil, TeeSwedish, TeeChineseSimp, TeePortuguese,
+  TeeRussian, TeeItalian, TeeNorwegian, TeeJapanese, TeePolish,
+  TeeSlovene, TeeTurkish, TeeHungarian, TeeGalician,
+  TeeProCo,
+  {$ENDIF}
+
+  SysUtils;
 
 Procedure SetEnglishConstants;
 begin
@@ -189,7 +200,9 @@ end;
 Procedure TeeOfficeEnglish;
 begin
   SetEnglishConstants;
+  {$IFDEF TEEPRO}
   TeeSetEnglish;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeSpanish;
@@ -271,6 +284,8 @@ end;
 
 begin
   SetSpanishConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetSpanish;
 
   if TeeSpanishLanguage.IndexOf('NEW USING WIZARD')=-1 then
@@ -389,6 +404,7 @@ begin
     'EXPLODE=Expandir'#13+
     'AUTOSIZE=Tama�o Auto.'#13
     ;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeGalician;
@@ -470,6 +486,8 @@ end;
 
 begin
   SetGalicianConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetGalician;
 
   if TeeGalicianLanguage.IndexOf('NEW USING WIZARD')=-1 then
@@ -612,6 +630,7 @@ begin
     'AUTOSIZE=Tama�o Auto.'#13+
     'AXIS 2=Eje 2'
     ;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeCatalan;
@@ -694,6 +713,8 @@ end;
 
 begin
   SetCatalanConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetCatalan;
 
   if TeeLanguage.IndexOfName('NEW USING WIZARD')=-1 then
@@ -833,6 +854,7 @@ begin
     'LABELS RANGE=Rang Textes'#13+
     'FOCUS=Resaltar'#13+
     'EXPLODE=Expandir';
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeGerman;
@@ -844,23 +866,23 @@ begin
   TeeMsg_DrawLineInstructions:='Ziehen Sie die Maus, um Linien zu zeichnen, auszuw�hlen und zu bewegen.';
 
   TeeMsg_SureToDeleteDataSet :='Soll der Datensatz wirklich gel�scht werden?';
-  TeeMsg_Select              :='Ausw�hlen'; 
+  TeeMsg_Select              :='Ausw�hlen';
   TeeMsg_EMail               :='e-mail';
   TeeMsg_Open                :='�ffnen';
-  TeeMsg_New                 :='Neu'; 
-  TeeMsg_ImportingWeb        :='Aus dem Web importieren: %s'; 
+  TeeMsg_New                 :='Neu';
+  TeeMsg_ImportingWeb        :='Aus dem Web importieren: %s';
   TeeMsg_Annotation          :='Kommentar';
-  TeeMsg_Modified            :='Modifiziert'; 
- 
-  TeeMsg_Next                :='&N�chster>'; 
-  TeeMsg_OK                  :='OK'; 
-  TeeMsg_Close               :='Schlie�en'; 
-  TeeMsg_Go                  :='&Go !'; 
+  TeeMsg_Modified            :='Modifiziert';
+
+  TeeMsg_Next                :='&N�chster>';
+  TeeMsg_OK                  :='OK';
+  TeeMsg_Close               :='Schlie�en';
+  TeeMsg_Go                  :='&Go !';
   TeeMsg_Upload              :='&Upload !';
 
-  TeeMsg_CannotGetVersion    :='Kann nicht verbinden, um aktuelle Version zu erhalten.' 
-                                +#13+'Fehler: %d %s'; 
- 
+  TeeMsg_CannotGetVersion    :='Kann nicht verbinden, um aktuelle Version zu erhalten.'
+                                +#13+'Fehler: %d %s';
+
   TeeMsg_CannotGetNewVersion :='Kann aktuelle Version nicht herunterladen.'+#13+'Fehler: %d %s'; 
  
   TeeMsg_WrongVersion        :='Falsche Version erhalten.'; 
@@ -912,6 +934,7 @@ end;
 begin
   SetGermanConstants;
 
+  {$IFDEF TEEPRO}
   if TeeGermanLanguage=nil then
   begin
     TeeCreateGerman;
@@ -1036,6 +1059,7 @@ begin
     ;
   end;
   TeeSetGerman;
+  {$ENDIF}
 end;
 
 Procedure SetFrenchConstants;
@@ -1119,12 +1143,14 @@ Procedure TeeOfficeFrench;
 begin
   SetFrenchConstants;
 
+  {$IFDEF TEEPRO}
   if TeeFrenchLanguage=nil then
   begin
     TeeCreateFrench;
     with TeeFrenchLanguage do ;
   end;
   TeeSetFrench;
+  {$ENDIF}
 end;
 
 Procedure SetBrazilConstants;
@@ -1208,12 +1234,14 @@ Procedure TeeOfficeBrazil;
 begin
   SetBrazilConstants;
 
+  {$IFDEF TEEPRO}
   if TeeBrazilLanguage=nil then
   begin
     TeeCreateBrazil;
     with TeeBrazilLanguage do ;
   end;
   TeeSetBrazil;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeDanish;
@@ -1298,6 +1326,7 @@ end;
 begin
   SetDanishConstants;
 
+  {$IFDEF TEEPRO}
   if TeeDanishLanguage=nil then
   begin
     TeeCreateDanish;
@@ -1305,6 +1334,7 @@ begin
   end;
 
   TeeSetDanish;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeDutch;
@@ -1389,6 +1419,7 @@ end;
 begin
   SetDutchConstants;
 
+  {$IFDEF TEEPRO}
   if TeeDutchLanguage=nil then
   begin
     TeeCreateDutch;
@@ -1396,6 +1427,7 @@ begin
   end;
 
   TeeSetDutch;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeSwedish;
@@ -1476,6 +1508,7 @@ end;
 begin
   SetSwedishConstants;
 
+  {$IFDEF TEEPRO}
   if TeeSwedishLanguage=nil then
   begin
     TeeCreateSwedish;
@@ -1483,6 +1516,7 @@ begin
   end;
 
   TeeSetSwedish;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeChinese;
@@ -1567,6 +1601,7 @@ end;
 begin
   SetChineseConstants;
 
+  {$IFDEF TEEPRO}
   if TeeChineseLanguage=nil then
   begin
     TeeCreateChinese;
@@ -1574,6 +1609,7 @@ begin
   end;
 
   TeeSetChinese;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeChineseSimp;
@@ -1658,6 +1694,7 @@ end;
 begin
   SetChineseSimpConstants;
 
+  {$IFDEF TEEPRO}
   if TeeChineseSimpLanguage=nil then
   begin
     TeeCreateChineseSimp;
@@ -1665,6 +1702,7 @@ begin
   end;
 
   TeeSetChineseSimp;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficePortuguese;
@@ -1748,6 +1786,7 @@ end;
 begin
   SetPortugueseConstants;
 
+  {$IFDEF TEEPRO}
   if TeePortugueseLanguage=nil then
   begin
     TeeCreatePortuguese;
@@ -1755,6 +1794,7 @@ begin
   end;
 
   TeeSetPortuguese;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeRussian;
@@ -1837,6 +1877,8 @@ end;
 
 begin
   SetRussianConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetRussian;
 
   if TeeRussianLanguage.IndexOf('NEW USING WIZARD')=-1 then
@@ -1977,6 +2019,7 @@ begin
     'EXPLODE=���������'#13+
     'AUTOSIZE=����������'#13+
     'AXIS 2=��� 2';
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeItalian;
@@ -2061,6 +2104,7 @@ end;
 begin
   SetItalianConstants;
 
+  {$IFDEF TEEPRO}
   if TeeItalianLanguage=nil then
   begin
     TeeCreateItalian;
@@ -2068,6 +2112,7 @@ begin
   end;
 
   TeeSetItalian;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeNorwegian;
@@ -2152,6 +2197,7 @@ end;
 begin
   SetNorwegianConstants;
 
+  {$IFDEF TEEPRO}
   if TeeNorwegianLanguage=nil then
   begin
     TeeCreateNorwegian;
@@ -2159,6 +2205,7 @@ begin
   end;
 
   TeeSetNorwegian;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeJapanese;
@@ -2243,6 +2290,7 @@ end;
 begin
   SetJapaneseConstants;
 
+  {$IFDEF TEEPRO}
   if TeeJapaneseLanguage=nil then
   begin
     TeeCreateJapanese;
@@ -2250,6 +2298,7 @@ begin
   end;
 
   TeeSetJapanese;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficePolish;
@@ -2333,6 +2382,8 @@ end;
 
 begin
   SetPolishConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetPolish;
 
   if TeeLanguage.IndexOfName('NEW USING WIZARD')=-1 then
@@ -2432,6 +2483,7 @@ begin
     'DELETE POINT=Usu� punkt'#13+
     'FIXED=Sta�y'
     ;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeSlovene;
@@ -2516,6 +2568,7 @@ end;
 begin
   SetSloveneConstants;
 
+  {$IFDEF TEEPRO}
   if TeeSloveneLanguage=nil then
   begin
     TeeCreateSlovene;
@@ -2523,6 +2576,7 @@ begin
   end;
 
   TeeSetSlovene;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeTurkish;
@@ -2607,6 +2661,7 @@ end;
 begin
   SetTurkishConstants;
 
+  {$IFDEF TEEPRO}
   if TeeTurkishLanguage=nil then
   begin
     TeeCreateTurkish;
@@ -2614,6 +2669,7 @@ begin
   end;
 
   TeeSetTurkish;
+  {$ENDIF}
 end;
 
 Procedure TeeOfficeHungarian;
@@ -2697,6 +2753,7 @@ end;
 begin
   SetHungarianConstants;
 
+  {$IFDEF TEEPRO}
   if TeeHungarianLanguage=nil then
   begin
     TeeCreateHungarian;
@@ -2704,6 +2761,7 @@ begin
   end;
 
   TeeSetHungarian;
+  {$ENDIF}
 end;
      
 initialization

@@ -131,7 +131,7 @@ implementation
 {$ENDIF}
 
 Uses
-  TeeConst, TreeConst, TeeBrushDlg, TreeTeEd, TeeTranslate;
+  TeeConst, TreeConst, TeeBrushDlg, TreeTeEd;
 
 Procedure EditTreeConnection( AOwner:TComponent;
                               AConnection:TTreeConnection;
@@ -157,7 +157,7 @@ begin
   Multiple:=False;
   Creating:=True;
   PageControl1.ActivePage:=TabSheet1;
-  TeeTranslateControl(Self);
+  TreeTranslateControl(Self);
 end;
 
 procedure TConnectionEditor.SetStyleControls;

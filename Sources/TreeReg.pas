@@ -55,10 +55,23 @@ Uses
      TeeTree, TeePrevi, TeeAbout,
 
      TreeConst, TreeEd, TreeShEd,
-     TreeFlow, TreeElectric, TreeUML, TreeTransit, TeeAnimate, TreeAnimate,
-     TreeAnimateEditor, TreeNavigator,
+     TreeFlow, TreeElectric, TreeUML, TreeTransit,
 
-     TeeBrushDlg, TeCanvas, SysUtils, TeeConst, TeeTranslate,
+     TeeConst,
+
+     {$IF TeeMsg_TeeChartPalette='TeeChart'}
+     {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+     {$ENDIF}
+
+     {$IFDEF TEEPRO}
+     TeeAnimate, TreeAnimate,
+     TreeAnimateEditor,
+     TeeTranslate,
+     {$ENDIF}
+
+     TreeNavigator,
+
+     TeeBrushDlg, TeCanvas, SysUtils,
      TeeEdiGrad, TeeProcs, TeePenDlg,
      TreeMapNavigator;
 
@@ -70,6 +83,7 @@ type
     function GetVerb( Index : Integer ) : string; override;
   end;
 
+  {$IFDEF TEEPRO}
   TTreeAnimateCompEditor=class(TComponentEditor)
   public
     procedure Edit; override;
@@ -77,8 +91,10 @@ type
     function GetVerbCount : Integer; override;
     function GetVerb( Index : Integer ) : string; override;
   end;
+  {$ENDIF}
 
 { TTreeCompEditor }
+
 procedure TTreeCompEditor.Edit;
 begin
   EditTree(nil,TCustomTree(Component));
@@ -186,6 +202,7 @@ begin
 end;
 {$ENDIF}
 
+{$IFDEF TEEPRO}
 { TTreeAnimateCompEditor }
 
 procedure TTreeAnimateCompEditor.Edit;
@@ -235,18 +252,21 @@ function TAnimationsProperty.GetAttributes: TPropertyAttributes;
 begin
   Result := [paDialog];
 end;
+{$ENDIF}
 
 Procedure Register;
 begin
   TeeActivateGroup;
 
-  RegisterNoIcon( [ TTreeNodeShape, TTreeConnection, TTeeAnimation ]);
+  RegisterNoIcon( [ TTreeNodeShape, TTreeConnection
+
+                  {$IFDEF TEEPRO}, TTeeAnimation{$ENDIF} ]);
 
   RegisterComponents(TeeMsg_TeeTreePalette,[ TTree,
                                              TTreeEdit,
                                              TImageLevels,
                                              TTreePageNavigator,
-                                             TTreeAnimate,
+                                             {$IFDEF TEEPRO}TTreeAnimate,{$ENDIF}
                                              TTreeEditorPanel,
                                              TTreeRuler,
                                              TTreeNavigator
@@ -254,16 +274,18 @@ begin
 
   RegisterComponentEditor(TCustomTree, TTreeCompEditor);
   RegisterComponentEditor(TTreeEdit, TTreeEditCompEditor);
+
+  {$IFDEF TEEPRO}
   RegisterComponentEditor(TTreeAnimate, TTreeAnimateCompEditor);
+  RegisterPropertyEditor(TypeInfo(TAnimations), TTreeAnimate, 'Animations',
+                         TAnimationsProperty);
+  {$ENDIF}
 
   RegisterPropertyEditor(TypeInfo(TTreeBrush), nil, '',TTreeBrushProperty);
 
   {$IFDEF TEESTRINGSPROPERTY}
   RegisterPropertyEditor(TypeInfo(TTreeStrings), nil, '',TTreeStringsProperty);
   {$ENDIF}
-
-  RegisterPropertyEditor(TypeInfo(TAnimations), TTreeAnimate, 'Animations',
-                         TAnimationsProperty);
 
   TreeSetLanguage(False);
 

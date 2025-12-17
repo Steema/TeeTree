@@ -24,7 +24,19 @@ uses
   System.UITypes,
   {$ENDIF}
 
-  TeeGDIPlus, TeePenDlg, TeeInspector, TreeNavigator, TeeNavigator;
+  TeeGDIPlus, TeePenDlg, 
+
+  TeeConst,
+
+  {$IF TeeMsg_TeeChartPalette='TeeChart'}
+  {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+  {$ENDIF}
+  
+  {$IFDEF TEEPRO}
+  TeeInspector, 
+  {$ENDIF}
+
+  TreeNavigator, TeeNavigator;
 
 Const sgStandard=0;  { "Standard" shape toolbar tab }
 
@@ -411,7 +423,6 @@ type
     HorizRuler: TTreeRuler;
     VertRuler: TTreeRuler;
     Automatic3: TMenuItem;
-    TeeInspector1: TTeeInspector;
     TreePageNavigator1: TTreePageNavigator;
     InvertedSides1: TMenuItem;
     N24: TMenuItem;
@@ -972,9 +983,14 @@ implementation
 {$ENDIF}
 
 Uses
-  TreeConst, TeePrevi, TreeExport, TeeExport, TeeBrushDlg, TeeConst, TeeEdiGrad,
+  TreeConst, TeePrevi, TreeExport, TeeExport, TeeBrushDlg, TeeEdiGrad,
   TeeShadowEditor, TreeShEd, TreeCoEd, TreeTeEd, TypInfo, Registry, Printers,
-  TeeTranslate, TeeAbout, TeeEdiFont;
+
+  {$IFDEF TEEPRO}
+  TeeTranslate, 
+  {$ENDIF}
+
+  TeeAbout, TeeEdiFont;
 
 {$R TreeLogo.res}
 
@@ -2083,6 +2099,12 @@ const
 procedure TTreeEditor.FormCreate(Sender: TObject);
 var t : Integer;
 begin
+  {$IFDEF TEEPRO}
+  TeeInspector1:=TTeeInspector.Create(Self); 
+  TeeInspector1.Align:=alClient;
+  TeeInspector1.Parent:=PanelInspector;
+  {$ENDIF}
+
   with TabControl1.Tabs do
   begin
     Add('Design');
@@ -2113,9 +2135,11 @@ begin
 
   PageShapes.TabIndex:=0;
 
+  {$IFDEF TEEPRO}
   TeeInspector1.Color:=clWhite;
   TeeInspector1.FixedRows:=0;
   TeeInspector1.DoubleBuffered:=True;
+  {$ENDIF}
   
   PanelFont.DoubleBuffered:=True;
   PanelShape.DoubleBuffered:=True;
@@ -2487,7 +2511,9 @@ begin { empty the current Tree }
 
   SetNewTreeSettings;
 
+  {$IFDEF TEEPRO}
   TeeInspector1.SetProperties(nil);
+  {$ENDIF}
 end;
 
 Function TreeCheckExtension(Const AFileName:String):String;
@@ -4055,7 +4081,10 @@ begin { The Tree has been modified (or not) }
   if FModified then
   begin
     StatusBar1.Panels[stPanelModified].Text:=TeeMsg_Modified;
+
+    {$IFDEF TEEPRO}
     TeeInspector1.Invalidate;
+    {$ENDIF}
   end
   else StatusBar1.Panels[stPanelModified].Text:='';
 end;
@@ -4448,8 +4477,11 @@ begin
 end;
 
 Procedure TTreeEditor.SetInspectorProperties;
+{$IFDEF TEEPRO}
 var tmp : TPopupMenu;
+{$ENDIF}
 begin
+  {$IFDEF TEEPRO}
   if TheTree.Selected.Count=0 then
      if Assigned(TheTree.Connections.Selected) then
         tmp:=PopupConnFormat
@@ -4464,6 +4496,7 @@ begin
     Col:=1;
     if (Row=0) and Header.Visible then Row:=1;
   end;
+  {$ENDIF}
 end;
 
 procedure TTreeEditor.NodeTreeUnSelectShape(Sender: TTreeNodeShape);

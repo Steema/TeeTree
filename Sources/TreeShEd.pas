@@ -170,7 +170,7 @@ implementation
 {$ENDIF}
 
 uses
-  TeeBrushDlg, TreeTeEd, TeeTranslate, TreeConst, TeeShadowEditor,
+  TeeBrushDlg, TreeTeEd, TreeConst, TeeShadowEditor,
   TeeMouseCursor;
 
 Procedure EditTreeShape(const AOwner:TComponent; const AShape:TTreeNodeShape);
@@ -565,7 +565,7 @@ begin
   OldX:=0;
   OldY:=0;
 
-  TeeTranslateControl(Self);
+  TreeTranslateControl(Self);
 end;
 
 procedure TNodeTreeEditor.ScrollBar2Change(Sender: TObject);

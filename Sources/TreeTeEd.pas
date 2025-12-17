@@ -88,7 +88,7 @@ implementation
 {$ENDIF}
 
 Uses
-  TeeTranslate, TeeBrushDlg, TeeEdiGrad, TeeStringsEditor;
+  TreeConst, TeeBrushDlg, TeeEdiGrad, TeeStringsEditor;
 
 Procedure TreeEditText(AOwner:TComponent; AElement:TCustomTreeElement);
 begin
@@ -184,7 +184,7 @@ end;
 procedure TFormTeeText.FormCreate(Sender: TObject);
 begin
   IFontEditor:=TTeeFontEditor.InsertEditor(TabFont);
-  TeeTranslateControl(Self);
+  TreeTranslateControl(Self);
   Changing:=True;
 end;
 

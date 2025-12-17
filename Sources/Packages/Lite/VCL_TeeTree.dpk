@@ -1,0 +1,59 @@
+package VCL_TeeTree;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TeeTree VCL Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  TeeUI,
+  Tee;
+
+contains
+  TreeTeEd in '..\..\TreeTeEd.pas' {FormTeeText},
+  TeeTree in '..\..\TeeTree.pas',
+  TreeCoEd in '..\..\TreeCoEd.pas' {ConnectionEditor},
+  TreeFlow in '..\..\TreeFlow.pas',
+  TreeShed in '..\..\TreeShed.pas' {NodeTreeEditor},
+  TeeDBTre in '..\..\TeeDBTre.pas',
+  TreeEd in '..\..\TreeEd.pas' {TreeEditor},
+  TreeDBEd in '..\..\TreeDBEd.pas' {FormDBTree},
+  TreeConst in '..\..\TreeConst.pas',
+  TreeUML in '..\..\TreeUML.pas',
+  TreeElectric in '..\..\TreeElectric.pas',
+  TreeExport in '..\..\TreeExport.pas',
+  TeeOfficeConstants in '..\..\TeeOfficeConstants.pas',
+  TeeRecentFiles in '..\..\TeeRecentFiles.pas',
+  TreeTransit in '..\..\TreeTransit.pas',
+  TreeNavigator in '..\..\TreeNavigator.pas',
+  TreeMapNavigator in '..\..\TreeMapNavigator.pas',
+  TreeChildManagers in '..\..\TreeChildManagers.pas';
+
+end.

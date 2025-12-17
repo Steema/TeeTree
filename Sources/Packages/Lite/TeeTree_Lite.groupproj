@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6C255800-8EAA-4192-937B-236047A116C8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VCL_TeeTree.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMX_TeeTree.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DclVCL_TeeTree.dproj">
+            <Dependencies>VCL_TeeTree.dproj</Dependencies>
+        </Projects>
+        <Projects Include="DclFMX_TeeTree.dproj">
+            <Dependencies>FMX_TeeTree.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VCL_TeeTree">
+        <MSBuild Projects="VCL_TeeTree.dproj"/>
+    </Target>
+    <Target Name="VCL_TeeTree:Clean">
+        <MSBuild Projects="VCL_TeeTree.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCL_TeeTree:Make">
+        <MSBuild Projects="VCL_TeeTree.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMX_TeeTree">
+        <MSBuild Projects="FMX_TeeTree.dproj"/>
+    </Target>
+    <Target Name="FMX_TeeTree:Clean">
+        <MSBuild Projects="FMX_TeeTree.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMX_TeeTree:Make">
+        <MSBuild Projects="FMX_TeeTree.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclVCL_TeeTree" DependsOnTargets="VCL_TeeTree">
+        <MSBuild Projects="DclVCL_TeeTree.dproj"/>
+    </Target>
+    <Target Name="DclVCL_TeeTree:Clean" DependsOnTargets="VCL_TeeTree:Clean">
+        <MSBuild Projects="DclVCL_TeeTree.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclVCL_TeeTree:Make" DependsOnTargets="VCL_TeeTree:Make">
+        <MSBuild Projects="DclVCL_TeeTree.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclFMX_TeeTree" DependsOnTargets="FMX_TeeTree">
+        <MSBuild Projects="DclFMX_TeeTree.dproj"/>
+    </Target>
+    <Target Name="DclFMX_TeeTree:Clean" DependsOnTargets="FMX_TeeTree:Clean">
+        <MSBuild Projects="DclFMX_TeeTree.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclFMX_TeeTree:Make" DependsOnTargets="FMX_TeeTree:Make">
+        <MSBuild Projects="DclFMX_TeeTree.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VCL_TeeTree;FMX_TeeTree;DclVCL_TeeTree;DclFMX_TeeTree"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VCL_TeeTree:Clean;FMX_TeeTree:Clean;DclVCL_TeeTree:Clean;DclFMX_TeeTree:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VCL_TeeTree:Make;FMX_TeeTree:Make;DclVCL_TeeTree:Make;DclFMX_TeeTree:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

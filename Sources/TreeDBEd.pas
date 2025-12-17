@@ -153,7 +153,7 @@ uses
   {$IFDEF D17}
   System.Generics.Collections,
   {$ENDIF}
-  TreeConst, TreeShEd, TreeEd, TeeSelectList, TeeTranslate;
+  TreeConst, TreeShEd, TreeEd, TeeSelectList;
 
 Procedure ShowDBTreeEditor(Owner:TComponent; ADBTree:TCustomDBTree);
 begin
@@ -350,7 +350,7 @@ end;
 
 procedure TFormDBTree.FormCreate(Sender: TObject);
 begin
-  TeeTranslateControl(Self);
+  TreeTranslateControl(Self);
 
   BApply.Enabled:=False;
   Button2.Enabled:=False;

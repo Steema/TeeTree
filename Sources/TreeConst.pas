@@ -8,6 +8,15 @@ unit TreeConst;
 
 interface
 
+uses
+  TeeConst,
+  Controls;
+
+  {$IF TeeMsg_TeeChartPalette='TeeChart'}
+  {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+  {$ENDIF}
+
+
 var
   TreeMsg_Browse,
   TreeMsg_Clear,
@@ -78,7 +87,7 @@ var
 Const
   TeeMsg_TeeTreePalette  = 'TeeTree';
   TeeTree_MajorVersion   = '2';
-  TeeTree_MinorVersion   = '.1';
+  TeeTree_MinorVersion   = '.2';
   TreeMsg_TeeTree        = 'TeeTree v'+TeeTree_MajorVersion+TeeTree_MinorVersion;
   TreeMsg_CompNamePrefix = 'TreeShape';
   TreeMsg_TeeExtension   = 'ttr';
@@ -93,6 +102,9 @@ Procedure TreeSetEnglish;
 Procedure TreeSetLanguage(English:Boolean);
 Procedure TreeLanguageHook;
 
+procedure TreeTranslateControl(const AControl:TControl);
+
+{$IFDEF TEEPRO}
 Procedure TreeSetBrazil;
 Procedure TreeSetCatalan;
 Procedure TreeSetChinese;
@@ -113,17 +125,29 @@ Procedure TreeSetSlovene;
 Procedure TreeSetSpanish;
 Procedure TreeSetSwedish;
 Procedure TreeSetTurkish;
+{$ENDIF}
 
 implementation
 
-Uses TeeCatalan, TeeSpanish, TeeGerman, TeeFrench, TeeBrazil, TeeDanish,
+{$IFDEF TEEPRO}
+uses
+     TeeCatalan, TeeSpanish, TeeGerman, TeeFrench, TeeBrazil, TeeDanish,
      TeeDutch, TeeSwedish, TeeChinese, TeeChineseSimp, TeePortuguese,
      TeeHungarian, TeeRussian, TeeItalian, TeeNorwegian, TeeJapanese,
      TeePolish, TeeSlovene, TeeTurkish, TeeGalician,
-     TeeConst, TeeOfficeConstants, TeeTranslate, TeeTranslateEditor;
+     TeeOfficeConstants, TeeTranslate, TeeTranslateEditor;
+{$ENDIF}
+
+procedure TreeTranslateControl(const AControl:TControl);
+begin
+  {$IFDEF TEEPRO}
+  TeeTranslateControl(AControl);
+  {$ENDIF}
+end;
 
 Procedure TreeSetLanguage(English:Boolean);
 begin
+  {$IFDEF TEEPRO}
   Case TeeLanguageRegistry of
     1: TreeSetBrazil;
     2: TreeSetCatalan;
@@ -148,11 +172,16 @@ begin
   else
     if English then TreeSetEnglish;
   end;
+  {$ELSE}
+  TreeSetEnglish;
+  {$ENDIF}
 end;
 
 Procedure TreeLanguageHook;
 begin
+  {$IFDEF TEEPRO}
   if TeeAskLanguage then
+  {$ENDIF}
      TreeSetLanguage(True);
 end;
 
@@ -336,6 +365,7 @@ end;
 
 begin
   SetSpanishConstants;
+  {$IFDEF TEEPRO}
   TeeSetSpanish;
 
   with TeeSpanishLanguage do
@@ -455,6 +485,7 @@ begin
     'POLYLINE=Poli-linea'#13+
     'TRANSIT=Tr�fico'#13+
     'BUILD=ver';
+  {$ENDIF}
 end;
 
 Procedure TreeSetGalician;
@@ -544,6 +575,7 @@ end;
 
 begin
   SetGalicianConstants;
+  {$IFDEF TEEPRO}
   TeeSetGalician;
 
   with TeeGalicianLanguage do
@@ -643,6 +675,7 @@ begin
     'DELETE POINT=Eliminar Punto'#13+
     'FIXED=Fijo'#13+
     'ELECTRIC=El�ctricas';
+  {$ENDIF}
 end;
 
 Procedure TreeSetCatalan;
@@ -733,6 +766,7 @@ end;
 begin
   SetCatalanConstants;
 
+  {$IFDEF TEEPRO}
   TeeSetCatalan;
 
   with TeeCatalanLanguage do
@@ -833,32 +867,7 @@ begin
     'FIXED=Fixe'
     ;
 
-  TeeSetCatalan;
-end;
-
-Procedure TreeSetGerman;
-begin
-  TeeSetGerman;
-end;
-
-Procedure TreeSetFrench;
-begin
-  TeeSetFrench;
-end;
-
-Procedure TreeSetBrazil;
-begin
-  TeeSetBrazil;
-end;
-
-Procedure TreeSetDanish;
-begin
-  TeeSetDanish;
-end;
-
-Procedure TreeSetDutch;
-begin
-  TeeSetDutch;
+  {$ENDIF}
 end;
 
 Procedure TreeSetSwedish;
@@ -949,6 +958,7 @@ Procedure TreeSetSwedish;
 begin
   SetSwedishConstants;
 
+  {$IFDEF TEEPRO}
   TeeSetSwedish;
 
   with TeeSwedishLanguage do
@@ -1048,42 +1058,7 @@ begin
     'DELETE POINT=Radera punkt'#13+
     'FIXED=Fixerad';
 
-  TeeSetSwedish;
-end;
-
-Procedure TreeSetChinese;
-begin
-  TeeSetChinese;
-end;
-
-Procedure TreeSetChineseSimp;
-begin
-  TeeSetChineseSimp;
-end;
-
-Procedure TreeSetPortuguese;
-begin
-  TeeSetPortuguese;
-end;
-
-Procedure TreeSetRussian;
-begin
-  TeeSetRussian;
-end;
-
-Procedure TreeSetItalian;
-begin
-  TeeSetItalian;
-end;
-
-Procedure TreeSetNorwegian;
-begin
-  TeeSetNorwegian;
-end;
-
-Procedure TreeSetJapanese;
-begin
-  TeeSetJapanese;
+  {$ENDIF};
 end;
 
 Procedure TreeSetPolish;
@@ -1172,7 +1147,71 @@ Procedure TreeSetPolish;
 
 begin
   SetPolishConstants;
+
+  {$IFDEF TEEPRO}
   TeeSetPolish;
+  {$ENDIF}
+end;
+
+{$IFDEF TEEPRO}
+Procedure TreeSetGerman;
+begin
+  TeeSetGerman;
+end;
+
+Procedure TreeSetFrench;
+begin
+  TeeSetFrench;
+end;
+
+Procedure TreeSetBrazil;
+begin
+  TeeSetBrazil;
+end;
+
+Procedure TreeSetDanish;
+begin
+  TeeSetDanish;
+end;
+
+Procedure TreeSetDutch;
+begin
+  TeeSetDutch;
+end;
+
+Procedure TreeSetChinese;
+begin
+  TeeSetChinese;
+end;
+
+Procedure TreeSetChineseSimp;
+begin
+  TeeSetChineseSimp;
+end;
+
+Procedure TreeSetPortuguese;
+begin
+  TeeSetPortuguese;
+end;
+
+Procedure TreeSetRussian;
+begin
+  TeeSetRussian;
+end;
+
+Procedure TreeSetItalian;
+begin
+  TeeSetItalian;
+end;
+
+Procedure TreeSetNorwegian;
+begin
+  TeeSetNorwegian;
+end;
+
+Procedure TreeSetJapanese;
+begin
+  TeeSetJapanese;
 end;
 
 Procedure TreeSetSlovene;
@@ -1189,6 +1228,7 @@ Procedure TreeSetHungarian;
 begin
   TeeSetHungarian;
 end;
+{$ENDIF}
 
 initialization
   TreeSetEnglishConstants;
