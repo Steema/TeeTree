@@ -14,17 +14,17 @@ Tree1.Parent := Self;
 
 ### Do you have TeeChart Pro?
 
-If yes, then you should look at Packages\Pro folder for the appropiate packages for your RAD Studio version.
+If yes, then you should look at [Sources\Packages\Pro](https://github.com/Steema/TeeTree/tree/main/Sources/Packages/Pro) folder for the appropiate packages for your RAD Studio version.
 
-If not, then the Packages\Lite folder contains the packages that should be compiled and installed.
+If not, then the [Sources\Packages\Lite](https://github.com/Steema/TeeTree/tree/main/Sources/Packages/Lite) folder contains the packages that should be compiled and installed.
 These use the free TeeChart version (VCL and FMX) included in Delphi / C++ RAD Studio ide.
 
 ### Steps to build the Lite version:
 
-1) Install the free TeeChart Lite update for RAD 13.0 Florence. This update includes files necessary for TeeTree.
-2) Run RAD 13 and open this file: Sources\Packages\Lite\TeeTree_Lite.groupproj
+1) Install the free [TeeChart Lite update for RAD 13.0 Florence](https://www.steema.com/files/public/teechart/vcl/TeeChart_Lite_RAD13_Patch_251209.7z). This update includes files necessary for TeeTree.
+2) Run RAD 13 and open this file: [Sources\Packages\Lite\TeeTree_Lite.groupproj](https://github.com/Steema/TeeTree/tree/main/Sources/Packages/Lite)
 3) Right-click the DclVCL package and click "Install"
-4) Right-click the DclFMX package and click "Install"
+4) Right-click the DclFMX package and click "Install" (for Firemonkey)
 
 <img width="422" height="300" alt="image" src="https://github.com/user-attachments/assets/2e4ecfbf-269f-4841-bffb-c946bacc450b" />
 
