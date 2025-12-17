@@ -39,4 +39,18 @@ Create a new VCL Application, you should see the TTree component at the Componen
 
 <img width="913" height="664" alt="image" src="https://github.com/user-attachments/assets/d294b89c-bec5-405a-9242-89618ee33b01" />
 
+### Compiling
+
+1) Please add the paths to TeeTree sources at Delphi global Tools -> Options -> Language -> Delphi -> Library (Win32, Win64, etc), and / or to your:
+
+Project -> Options -> Building -> Delphi Compiler -> Search Path
+
+<img width="1261" height="861" alt="image" src="https://github.com/user-attachments/assets/7815ce7f-7188-4dba-9da6-fdd49d0898b7" />
+
+   
+2) Add the VclTee and FMXTee namespace prefixes
+
+<img width="375" height="611" alt="image" src="https://github.com/user-attachments/assets/7513b8dc-c761-4a92-b5b9-f15bf8aa5f6c" />
+
+
 
