@@ -14,7 +14,7 @@ uses
   SysUtils, Classes,
 
   Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls, Buttons, Menus,
-  ComCtrls, ExtDlgs, Grids, ImgList,
+  ComCtrls, ExtDlgs, Grids, ImgList, ImageList,
 
   TeeTree, TeCanvas, TeeProcs, TeeRecentFiles,
 
