@@ -8836,7 +8836,7 @@ begin
      ITree.FOnSelectShape(AShape);
 
   // if designing then redraw handles else redraw full tree...
-  if tmp and ITree.Showing then
+  if tmp {$IFNDEF FMX}and ITree.Showing{$ENDIF} then
      AShape.InternalDrawHandles
   else
      ITree.Invalidate;

@@ -10,6 +10,7 @@ interface
 
 uses
   TeeConst,
+  TeeProcs,
   Controls;
 
   {$IF TeeMsg_TeeChartPalette='TeeChart'}
