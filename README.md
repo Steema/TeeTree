@@ -4,7 +4,7 @@
 
 ### Component Library for Delphi / C++, VCL and Firemonkey FMX
 
-Originally developed in Delphi 5 (1999), TeeTree code runs up to RAD Studio 13.0 Florence 2025.
+Originally developed in Delphi 5 (1999), TeeTree code runs up to RAD Studio 13.1 Florence 2026.
 
 ### INSTALLATION INSTRUCTIONS [Click HERE](INSTALL.md)
 
