@@ -1,6 +1,6 @@
 {**********************************************}
 {   TTree Component  - Tree Editor dialog      }
-{   Copyright (c) 1998-2025 by Steema Software }
+{   Copyright (c) 1998-2026 by Steema Software }
 {**********************************************}
 {$I TeeDefs.inc}
 unit TreeEd;
@@ -1969,9 +1969,33 @@ begin
   TeeModified;
 end;
 
+{$IF TeeMsg_TeeChartPalette='TeeChart'}
+{$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+{$ENDIF}
+
+function DoEditBrush(const AOwner:TComponent; const ABrush:TTeeBrush):Boolean;
+begin
+  result:={$IFDEF TEEPRO}TBrushDialog.Edit{$ELSE}EditChartBrush{$ENDIF}(AOwner,ABrush);
+end;
+
+function DoEditPen(const AOwner:TComponent; const APen:TTeePen):Boolean;
+begin
+  result:={$IFDEF TEEPRO}TPenDialog.Edit{$ELSE}EditChartPen{$ENDIF}(AOwner,APen);
+end;
+
+function DoEditFont(const AOwner:TComponent; const AFont:TTeeFont):Boolean;
+begin
+  result:={$IFDEF TEEPRO}TTeeFontEditor.Edit{$ELSE}EditTeeFont{$ENDIF}(AOwner,AFont);
+end;
+
+function DoEditGradient(const AOwner:TComponent; const AGradient:TTeeGradient):Boolean;
+begin
+  result:={$IFDEF TEEPRO}TTeeGradientEditor.Edit{$ELSE}EditTeeGradient{$ENDIF}(AOwner,AGradient);
+end;
+
 procedure TTreeEditor.Button6Click(Sender: TObject);
 begin
-  if TBrushDialog.Edit(Self,TheTree.CrossBox.Brush) then
+  if DoEditBrush(Self,TheTree.CrossBox.Brush) then
      TeeModified;
 end;
 
@@ -2848,10 +2872,10 @@ procedure TTreeEditor.Border1Click(Sender: TObject);
 var tmp : Boolean;
 begin
   if Assigned(TheTree.Connections.Selected) then
-     tmp:=TPenDialog.Edit(Self,TheTree.Connections.Selected.Border)
+     tmp:=DoEditPen(Self,TheTree.Connections.Selected.Border)
   else
   if TheTree.Selected.Count=1 then
-     tmp:=TPenDialog.Edit(Self,TheTree.Selected.First.Border)
+     tmp:=DoEditPen(Self,TheTree.Selected.First.Border)
   else
   With TNodeTreeEditor.Create(Self) do
   try
@@ -2876,11 +2900,11 @@ var t   : Integer;
     tmp : Boolean;
 begin
   if Assigned(TheTree.Connections.Selected) then
-     tmp:=TTeeFontEditor.Edit(Self,TheTree.Connections.Selected.Font)
+     tmp:=DoEditFont(Self,TheTree.Connections.Selected.Font)
   else
   with TheTree.Selected do
   begin
-    tmp:=TTeeFontEditor.Edit(Self,Items[0].Font);
+    tmp:=DoEditFont(Self,Items[0].Font);
 
     if tmp then
        for t:=1 to Count-1 do
@@ -3767,7 +3791,7 @@ Function TTreeEditor.TeeEditColor(Var Color:TColor):Boolean;
 var tmpColor : TColor;
 begin
   tmpColor:=Color;
-  Color:=TButtonColor.Edit(Self,Color);
+  Color:={$IFDEF TEEPRO}TButtonColor.Edit{$ELSE}EditColor{$ENDIF}(Self,Color);
   result:=tmpColor<>Color;
   if result then TeeModified;
 end;
@@ -3879,12 +3903,12 @@ begin
   With TheTree do
   if Assigned(Connections.Selected) then
   begin
-    if TPenDialog.Edit(Self,Connections.Selected.Font.OutLine) then
+    if DoEditPen(Self,Connections.Selected.Font.OutLine) then
        TeeModified;
   end
   else
   if Selected.Count>0 then
-     if TPenDialog.Edit(Self,Selected.First.Font.OutLine) then
+     if DoEditPen(Self,Selected.First.Font.OutLine) then
      begin
        Selected.ForEach(DoSetOutLine);
        TeeModified;
@@ -5165,7 +5189,8 @@ end;
 
 procedure TTreeEditor.PanelGradientClick(Sender: TObject);
 begin { edit Tree panel gradient... }
-  if TTeeGradientEditor.Edit(Self,TheTree.Gradient) then TeeModified;
+  if DoEditGradient(Self,TheTree.Gradient) then 
+     TeeModified;
 end;
 
 procedure TTreeEditor.HotTrack1Click(Sender: TObject);
@@ -5239,7 +5264,7 @@ end;
 procedure TTreeEditor.Gradient2Click(Sender: TObject);
 var t : Integer;
 begin
-  if TTeeGradientEditor.Edit(nil,TheTree.Selected.First.Gradient) then
+  if DoEditGradient(nil,TheTree.Selected.First.Gradient) then
      with TheTree.Selected do
           for t:=1 to Count-1 do
               Items[t].Gradient.Assign(First.Gradient);
@@ -5317,7 +5342,7 @@ end;
 
 procedure TTreeEditor.Border3Click(Sender: TObject);
 begin
-  if TPenDialog.Edit(nil,TheTree.Connections.Selected.Border) then
+  if DoEditPen(nil,TheTree.Connections.Selected.Border) then
      TeeModified;
 end;
 
@@ -5342,7 +5367,7 @@ end;
 
 procedure TTreeEditor.Font3Click(Sender: TObject);
 begin
-  if TTeeFontEditor.Edit(Self,TheTree.Connections.Selected.Font) then
+  if DoEditFont(Self,TheTree.Connections.Selected.Font) then
      TeeModified;
 end;
 
@@ -5615,11 +5640,11 @@ begin
   With TheTree do
   if Assigned(Connections.Selected) then
   begin
-    if TTeeGradientEditor.Edit(Self,Connections.Selected.Font.Gradient) then
+    if DoEditGradient(Self,Connections.Selected.Font.Gradient) then
        TeeModified;
   end
   else
-  if TTeeGradientEditor.Edit(Self,Selected.First.Font.Gradient) then
+  if DoEditGradient(Self,Selected.First.Font.Gradient) then
   begin
     for t:=1 to Selected.Count-1 do
         Selected[t].Font.Gradient:=Selected.First.Font.Gradient;

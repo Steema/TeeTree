@@ -1,6 +1,6 @@
 {**********************************************}
 {   TTree Component  - DBTree Editor dialog    }
-{   Copyright (c) 1998-2025 by Steema Software }
+{   Copyright (c) 1998-2026 by Steema Software }
 {**********************************************}
 {$I TeeDefs.inc}
 unit TreeDBEd;
@@ -385,6 +385,10 @@ begin
   RadioButton3Click(Sender);
 end;
 
+{$IF TeeMsg_TeeChartPalette='TeeChart'}
+{$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+{$ENDIF}
+
 Procedure TFormDBTree.FillControls;
 
   Procedure SetComboIndex(ACombo:TComboBox; Const AText:String);
@@ -422,7 +426,7 @@ begin
   if RadioButton3.Checked then Label2.Caption:=TreeMsg_MasterDataSet
                           else Label2.Caption:=TreeMsg_DataSet;
 
-  TTeeVCL.ShowControls(RadioButton3.Checked,
+  {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}ShowControls(RadioButton3.Checked,
      [Label6,Label7,ComboBox5,ComboBox6,Button5,Button9,Button10]);
 
   FillDataSets(CBDataSet.Items,RadioButton3.Checked,nil);
@@ -826,7 +830,7 @@ end;
 procedure TFormDBTree.OnShowEditor(Sender:TObject);
 begin
   with TNodeTreeEditor(Sender) do
-       TTeeVCL.ShowControls(False,[Label22,CBConnStyle,CheckBox8,Label20,ComboBox5]);
+       {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}ShowControls(False,[Label22,CBConnStyle,CheckBox8,Label20,ComboBox5]);
 end;
 
 procedure TFormDBTree.EditShape(AShape:TTreeNodeShape);

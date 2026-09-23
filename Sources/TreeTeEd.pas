@@ -1,6 +1,6 @@
 {**********************************************}
 {   TTree Component  - Text Editor Dialog      }
-{   Copyright (c) 1998-2025 by Steema Software }
+{   Copyright (c) 1998-2026 by Steema Software }
 {**********************************************}
 {$I TeeDefs.inc}
 unit TreeTeEd;
@@ -90,6 +90,10 @@ implementation
 Uses
   TreeConst, TeeBrushDlg, TeeEdiGrad, TeeStringsEditor;
 
+{$IF TeeMsg_TeeChartPalette='TeeChart'}
+{$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+{$ENDIF}
+
 Procedure TreeEditText(AOwner:TComponent; AElement:TCustomTreeElement);
 begin
   with TFormTeeText.Create(AOwner) do
@@ -110,16 +114,21 @@ begin
   end;
 end;
 
+procedure DoEditFont(const AOwner:TComponent; const AFont:TTeeFont);
+begin
+  {$IFDEF TEEPRO}TTeeFontEditor.Edit{$ELSE}EditTeeFont{$ENDIF}(AOwner,AFont);
+end;
+
 procedure TFormTeeText.Button2Click(Sender: TObject);
 var t : Integer;
 begin
   if IsConnection then
-     TTeeFontEditor.Edit(Self,Connection1.Font)
+     DoEditFont(Self,Connection1.Font)
   else
   With Tree1 do
   if Selected.Count>0 then
   begin
-    TTeeFontEditor.Edit(Self,Selected[0].Font);
+    DoEditFont(Self,Selected[0].Font);
 
     for t:=1 to Selected.Count-1 do
         Selected[t].Font.Assign(Selected[0].Font);
@@ -183,7 +192,7 @@ end;
 
 procedure TFormTeeText.FormCreate(Sender: TObject);
 begin
-  IFontEditor:=TTeeFontEditor.InsertEditor(TabFont);
+  IFontEditor:={$IFDEF TEEPRO}TTeeFontEditor.InsertEditor{$ELSE}InsertTeeFontEditor{$ENDIF}(TabFont);
   TreeTranslateControl(Self);
   Changing:=True;
 end;
@@ -204,6 +213,11 @@ begin
   for t:=0 to Selected.Count-1 do Selected[t].HorizTextAlign:=tmp
 end;
 
+function DoEditColor(const AOwner:TComponent; const AColor:TColor):TColor;
+begin
+  result:={$IFDEF TEEPRO}TButtonColor.Edit{$ELSE}EditColor{$ENDIF}(AOwner,AColor);
+end;
+
 procedure TFormTeeText.Shape5MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 var t:Integer;
@@ -211,12 +225,12 @@ var t:Integer;
 begin
   if IsConnection then
   begin
-    tmpColor:=TButtonColor.Edit(Self,Connection1.Font.Color);
+    tmpColor:=DoEditColor(Self,Connection1.Font.Color);
     Tree1.Connections.Selected.Font.Color:=tmpColor;
   end
   else
   begin
-    tmpColor:=TButtonColor.Edit(Self,Tree1.Selected[0].Font.Color);
+    tmpColor:=DoEditColor(Self,Tree1.Selected[0].Font.Color);
 
     With Tree1.Selected do
     for t:=0 to Count-1 do Items[t].Font.Color:=tmpColor;
@@ -299,7 +313,7 @@ end;
 
 procedure TFormTeeText.Button3Click(Sender: TObject);
 begin
-  TStringsEditor.Edit(Self,Memo2.Lines);
+  {$IFDEF TEEPRO}TStringsEditor.Edit{$ELSE}TeeEditStrings{$ENDIF}(Self,Memo2.Lines);
 end;
 
 procedure TFormTeeText.CBVisibleClick(Sender: TObject);

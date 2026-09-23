@@ -26,6 +26,12 @@ uses
   WideStrings,
   {$ENDIF}
 
+  TeeConst,
+
+  {$IF TeeMsg_TeeChartPalette='TeeChart'}
+  {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+  {$ENDIF}
+
   TeCanvas, TreeReg, TreeConst, TeeDBTre, TreeDBEd, TreeShEd, TeeTree, TeePenDlg;
 
 type
@@ -102,7 +108,7 @@ procedure TDBLayoutFormatProperty.OnShowEditor(Sender:TObject);
 begin
   with TNodeTreeEditor(Sender) do
   begin
-    TTeeVCL.ShowControls(False,[Label22,CBConnStyle,CheckBox8,Label20,ComboBox5]);
+    {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}ShowControls(False,[Label22,CBConnStyle,CheckBox8,Label20,ComboBox5]);
   end;
 end;
 

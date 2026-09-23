@@ -165,7 +165,7 @@ end;
 { TreeBrush Editor }
 procedure TTreeBrushProperty.Edit;
 begin
-  if TBrushDialog.Edit(nil,TTeeBrush(GetOrdValue)) then
+  if {$IFDEF TEEPRO}TBrushDialog.Edit{$ELSE}EditChartBrush{$ENDIF}(nil,TTeeBrush(GetOrdValue)) then
      Designer.Modified;
 end;
 

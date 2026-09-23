@@ -1,6 +1,6 @@
 {**********************************************}
 {   TTree Component - Connections Editor       }
-{   Copyright (c) 1998-2025 by Steema Software }
+{   Copyright (c) 1998-2026 by Steema Software }
 {**********************************************}
 {$I TeeDefs.inc}
 unit TreeCoEd;
@@ -245,9 +245,18 @@ begin
   Sender.ArrowTo.Brush.Assign(Connection.ArrowTo.Brush);
 end;
 
+{$IF TeeMsg_TeeChartPalette='TeeChart'}
+{$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+{$ENDIF}
+
+procedure DoEditBrush(const AOwner:TComponent; const ABrush:TTeeBrush);
+begin
+  {$IFDEF TEEPRO}TBrushDialog.Edit{$ELSE}EditChartBrush{$ENDIF}(AOwner,ABrush);
+end;
+
 procedure TConnectionEditor.Button6Click(Sender: TObject);
 begin
-  TBrushDialog.Edit(Self,Connection.ArrowTo.Brush);
+  DoEditBrush(Self,Connection.ArrowTo.Brush);
   SetOther(SetArrowToBrush);
 end;
 
@@ -258,7 +267,7 @@ end;
 
 procedure TConnectionEditor.Button4Click(Sender: TObject);
 begin
-  TBrushDialog.Edit(Self,Connection.ArrowFrom.Brush);
+  DoEditBrush(Self,Connection.ArrowFrom.Brush);
   SetOther(SetArrowFromBrush);
 end;
 
@@ -355,7 +364,7 @@ begin
     tmp.Tree1:=Self.Connection.Tree;
     tmp.Connection1:=Self.Connection;
 
-    TTeeVCL.AddFormTo(tmp,TabSheet4);
+    {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}AddFormTo(tmp,TabSheet4);
     tmp.PageControl1.ActivePage:=tmp.TabSheet1;
     tmp.ReAlign;
   end;
@@ -526,7 +535,7 @@ end;
 
 procedure TConnectionEditor.BBackClick(Sender: TObject);
 begin
-  TFormTeeShape.Edit(Self, Connection.Format, True);
+  {$IFDEF TEEPRO}TFormTeeShape.Edit{$ELSE}EditTeeCustomShape{$ENDIF}(Self, Connection.Format, True);
 end;
 
 procedure TConnectionEditor.CBBackClick(Sender: TObject);

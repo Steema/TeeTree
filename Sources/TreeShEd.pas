@@ -1,6 +1,6 @@
 {**********************************************}
 {   TTree Component                            }
-{   Copyright (c) 1998-2025 by Steema Software }
+{   Copyright (c) 1998-2026 by Steema Software }
 {**********************************************}
 {$I TeeDefs.inc}
 unit TreeShEd;
@@ -232,12 +232,16 @@ begin
   end;
 end;
 
+{$IF TeeMsg_TeeChartPalette='TeeChart'}
+{$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?
+{$ENDIF}
+
 procedure TNodeTreeEditor.Button2Click(Sender: TObject);
 var t : Integer;
 begin
   With Tree1 do
   if Selected.Count>0 then
-    if TBrushDialog.Edit(Self,Selected[0].Brush) then
+    if {$IFDEF TEEPRO}TBrushDialog.Edit{$ELSE}EditChartBrush{$ENDIF}(Self,Selected[0].Brush) then
        for t:=1 to Selected.Count-1 do
            Selected[t].Brush.Assign(Selected[0].Brush);
 end;
@@ -373,6 +377,24 @@ begin
          Selected[t].Gradient.Assign(Selected[0].Gradient);
 end;
 
+{$IFNDEF TEEPRO}
+function InsertPenForm(const APen:TTeePen; const AParent:TWinControl):TPenDialog;
+begin
+  result:=TPenDialog.Create(AParent.Owner);
+  result.PanelButtons.Hide;
+  result.Align:=alClient;
+  result.RefreshPen(APen);
+  AddFormTo(result,AParent);
+end;
+
+function InsertGradientForm(const AGradient:TCustomTeeGradient; const AParent:TWinControl):TTeeGradientEditor;
+begin
+  result:=TTeeGradientEditor.CreateCustom(AParent.Owner,AGradient);
+  result.Align:=alClient;
+  AddFormTo(result,AParent,AGradient);
+end;
+{$ENDIF}
+
 procedure TNodeTreeEditor.FormShow(Sender: TObject);
 var tmpSt : String;
     tmp   : Integer;
@@ -406,7 +428,7 @@ begin
 
     CBStyle.ItemIndex:=tmp;
 
-    TTeeVCL.ShowControls(Style<>tssCustom, [CBStyle,UDRound,ERoundSize,LRoundSize,Label1]);
+    {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}ShowControls(Style<>tssCustom, [CBStyle,UDRound,ERoundSize,LRoundSize,Label1]);
 
     CheckBox3.Checked:=Transparent;
 
@@ -417,11 +439,11 @@ begin
     end;
 
     { border }
-    IBorder:=TPenDialog.InsertForm(Border,TabBorder);
+    IBorder:={$IFDEF TEEPRO}TPenDialog.InsertForm{$ELSE}InsertPenForm{$ENDIF}(Border,TabBorder);
     IBorder.OnChangedPen:=ChangedBorder;
 
     { gradient }
-    IGradient:=TTeeGradientEditor.InsertForm(Gradient,TabGradient);
+    IGradient:={$IFDEF TEEPRO}TTeeGradientEditor.InsertForm{$ELSE}InsertGradientForm{$ENDIF}(Gradient,TabGradient);
     IGradient.OnChangedGradient:=ChangedGradient;
     CBGradientClip.Checked:=GradientClip;
 
@@ -649,7 +671,7 @@ var tmpColor : TColor;
     OldColor : TColor;
 begin
   OldColor:=Tree1.Selected[0].Brush.Color;
-  tmpColor:=TButtonColor.Edit(Self,OldColor);
+  tmpColor:={$IFDEF TEEPRO}TButtonColor.Edit{$ELSE}EditColor{$ENDIF}(Self,OldColor);
 
   if tmpColor<>OldColor then
   begin
@@ -693,7 +715,7 @@ begin
     tmp.Tree1:=Tree1;
     tmp.Connection1:=nil;
 
-    TTeeVCL.AddFormTo(tmp,TabText);
+    {$IFDEF TEEPRO}TTeeVCL.{$ENDIF}AddFormTo(tmp,TabText);
     tmp.ReAlign;
   end;
 end;
@@ -787,7 +809,7 @@ end;
 
 procedure TNodeTreeEditor.Button6Click(Sender: TObject);
 begin
-  TFiltersEditor.ShowEditor(Self, Tree1.Selected[0].Image);
+  {$IFDEF TEEPRO}TFiltersEditor.ShowEditor{$ELSE}ShowFiltersEditor{$ENDIF}(Self, Tree1.Selected[0].Image);
 end;
 
 procedure TNodeTreeEditor.ERoundSizeChange(Sender: TObject);
