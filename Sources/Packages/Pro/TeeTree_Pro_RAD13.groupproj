@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7E4B2C61-A93D-4F58-B0E2-D1C8F6A93504}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TeeTree2D37Tee9.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTree37.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DclTree2D37Tee9.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DclFMXTree37.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TeeTree2D37Tee9">
+        <MSBuild Projects="TeeTree2D37Tee9.dproj"/>
+    </Target>
+    <Target Name="TeeTree2D37Tee9:Clean">
+        <MSBuild Projects="TeeTree2D37Tee9.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TeeTree2D37Tee9:Make">
+        <MSBuild Projects="TeeTree2D37Tee9.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTree37">
+        <MSBuild Projects="FMXTree37.dproj"/>
+    </Target>
+    <Target Name="FMXTree37:Clean">
+        <MSBuild Projects="FMXTree37.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTree37:Make">
+        <MSBuild Projects="FMXTree37.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclTree2D37Tee9">
+        <MSBuild Projects="DclTree2D37Tee9.dproj"/>
+    </Target>
+    <Target Name="DclTree2D37Tee9:Clean">
+        <MSBuild Projects="DclTree2D37Tee9.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclTree2D37Tee9:Make">
+        <MSBuild Projects="DclTree2D37Tee9.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DclFMXTree37">
+        <MSBuild Projects="DclFMXTree37.dproj"/>
+    </Target>
+    <Target Name="DclFMXTree37:Clean">
+        <MSBuild Projects="DclFMXTree37.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DclFMXTree37:Make">
+        <MSBuild Projects="DclFMXTree37.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TeeTree2D37Tee9;FMXTree37;DclTree2D37Tee9;DclFMXTree37"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TeeTree2D37Tee9:Clean;FMXTree37:Clean;DclTree2D37Tee9:Clean;DclFMXTree37:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TeeTree2D37Tee9:Make;FMXTree37:Make;DclTree2D37Tee9:Make;DclFMXTree37:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
