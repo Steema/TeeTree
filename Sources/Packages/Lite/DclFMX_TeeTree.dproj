@@ -4,12 +4,12 @@
         <MainSource>DclFMX_TeeTree.dpk</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <ProjectName Condition="'$(ProjectName)'==''">DclFMX_TeeTree</ProjectName>
-        <TargetedPlatforms>1741955</TargetedPlatforms>
+        <TargetedPlatforms>1048579</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.4</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <ProjectName Condition="'$(ProjectName)'==''">DclFMX_TeeTree</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -114,6 +114,8 @@
         <VerInfo_Locale>1027</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;REST.Authenticator.OAuth.WebForm;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=36</VerInfo_Keys>
@@ -220,12 +222,12 @@
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Android">False</Platform>
-                <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice64">True</Platform>
-                <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="Linux64">True</Platform>
-                <Platform value="OSX64">True</Platform>
-                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="iOSSimARM64">False</Platform>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="OSXARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
                 <Platform value="Win64x">True</Platform>
