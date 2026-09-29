@@ -153,7 +153,8 @@ uses
   {$IFDEF D17}
   System.Generics.Collections,
   {$ENDIF}
-  TreeConst, TreeShEd, TreeEd, TeeSelectList;
+
+  TeeConst, TreeConst, TreeShEd, TreeEd, TeeSelectList;
 
 Procedure ShowDBTreeEditor(Owner:TComponent; ADBTree:TCustomDBTree);
 begin

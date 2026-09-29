@@ -88,7 +88,7 @@ implementation
 {$ENDIF}
 
 Uses
-  TreeConst, TeeBrushDlg, TeeEdiGrad, TeeStringsEditor;
+  TeeConst, TreeConst, TeeBrushDlg, TeeEdiGrad, TeeStringsEditor;
 
 {$IF TeeMsg_TeeChartPalette='TeeChart'}
 {$DEFINE TEEPRO} // <-- TeeChart Lite or Pro ?

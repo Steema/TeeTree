@@ -46,6 +46,7 @@ implementation
 {$ENDIF}
 
 Uses
+     Windows,
      Forms, Dialogs, Graphics,
 
      {$IFDEF TEESTRINGSPROPERTY}
@@ -67,6 +68,10 @@ Uses
      TeeAnimate, TreeAnimate,
      TreeAnimateEditor,
      TeeTranslate,
+     {$ENDIF}
+
+     {$IFDEF D9}
+     ToolsAPI,
      {$ENDIF}
 
      TreeNavigator,
@@ -254,6 +259,76 @@ begin
 end;
 {$ENDIF}
 
+{$IFNDEF FPC}
+{$IFDEF D9}
+function GetSplashBitmap:HBITMAP;
+begin
+  result:=LoadBitmap(FindResourceHInstance(HInstance), 'TTREE');
+end;
+
+var
+  AboutBoxIndex: Integer = -1;
+  SplashScreenInitialized: Boolean = False;
+
+procedure RegisterAboutBox;
+var Image: HBITMAP;
+    AboutBoxServices: IOTAAboutBoxServices;
+begin
+  if AboutBoxIndex = -1 then
+  begin
+    Supports(BorlandIDEServices,IOTAAboutBoxServices, AboutBoxServices);
+
+    if Assigned(AboutBoxServices) then
+    begin
+      Image:=GetSplashBitmap;
+
+      if Image<>0 then
+      begin
+        AboutBoxIndex:=AboutBoxServices.AddPluginInfo(
+              TreeMsg_TeeTree,
+              'Tree view, Flowchart and Diagramming Component Library for VCL and Firemonkey',
+              Image, False,
+              TeeMsg_TreeCopyright);
+      end;
+    end;
+  end;
+end;
+
+procedure UnRegisterAboutBox;
+var AboutBoxServices: IOTAAboutBoxServices;
+begin
+  if AboutBoxIndex<>-1 then
+  begin
+    Supports(BorlandIDEServices,IOTAAboutBoxServices, AboutBoxServices);
+
+    if Assigned(AboutBoxServices) then
+    begin
+      AboutBoxServices.RemovePluginInfo(AboutBoxIndex);
+      AboutBoxIndex:=-1;
+
+      //  AV at IDE shutdown??? --> AboutBoxServices:=nil;
+    end;
+  end;
+end;
+
+procedure RegisterSplashScreen;
+var Image: HBITMAP;
+begin
+  if Assigned(SplashScreenServices) and (not SplashScreenInitialized) then
+  begin
+    Image:=GetSplashBitmap;
+
+    if Image<>0 then
+    begin
+      SplashScreenServices.AddPluginBitmap(TreeMsg_TeeTree, Image,
+                           False, TeeMsg_TreeCopyright);
+      SplashScreenInitialized:=True;
+    end;
+  end;
+end;
+{$ENDIF}
+{$ENDIF}
+
 Procedure Register;
 begin
   TeeActivateGroup;
@@ -285,6 +360,13 @@ begin
 
   {$IFDEF TEESTRINGSPROPERTY}
   RegisterPropertyEditor(TypeInfo(TTreeStrings), nil, '',TTreeStringsProperty);
+  {$ENDIF}
+
+  {$IFNDEF FPC}
+  {$IFDEF D9}
+  RegisterSplashScreen;
+  RegisterAboutBox;
+  {$ENDIF}
   {$ENDIF}
 
   TreeSetLanguage(False);

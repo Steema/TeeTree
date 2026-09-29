@@ -841,6 +841,10 @@ type
     FSetting      : Boolean;
     TreeUndo      : TTreeUndo;
 
+    {$IFDEF TEEPRO}
+    TeeInspector1 : TTeeInspector;
+    {$ENDIF}
+
     Function CheckSave:Boolean;
     Procedure DoSaveTree;
     procedure DoTranslate;

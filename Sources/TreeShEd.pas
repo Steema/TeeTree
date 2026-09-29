@@ -170,7 +170,7 @@ implementation
 {$ENDIF}
 
 uses
-  TeeBrushDlg, TreeTeEd, TreeConst, TeeShadowEditor,
+  TeeBrushDlg, TreeTeEd, TeeConst, TreeConst, TeeShadowEditor,
   TeeMouseCursor;
 
 Procedure EditTreeShape(const AOwner:TComponent; const AShape:TTreeNodeShape);
